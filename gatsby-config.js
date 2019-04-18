@@ -9,6 +9,14 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: false, // defaults to false
+        jsxPragma: `react`, // defaults to "React"
+        allExtensions: false, // defaults to false
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
