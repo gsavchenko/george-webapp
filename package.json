@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-minimal-portfolio-blog",
-  "description": "GatsbyJS starter for a minimal portfolio website with blog. Suitable for developers.",
+  "name": "george-webapp",
+  "description": "My personal website built with Gatsby, TypeScript and love.",
   "version": "1.0.0",
-  "author": "Sai Krishna",
+  "author": "George Savchenko",
   "bugs": {
     "url": "https://github.com/s-kris/gatsby-minimal-portfolio-blog/issues"
   },
@@ -46,9 +46,11 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
+    "gatsby-plugin-tslint": "0.0.2",
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2",
-    "sass": "^1.20.1"
+    "tslint": "^5.16.0",
+    "tslint-loader": "^3.5.4"
   },
   "homepage": "",
   "keywords": [],
