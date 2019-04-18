@@ -1,9 +1,9 @@
-import React from 'react'
-import { FaAward, FaPaperPlane } from 'react-icons/fa'
+import React from 'react';
+import { FaAward, FaPaperPlane } from 'react-icons/fa';
 
-import Image1 from './../assets/images/image1.jpg'
-import Image2 from './../assets/images/image2.jpg'
-import Image3 from './../assets/images/image3.jpg'
+import Image1 from './../assets/images/image1.jpg';
+import Image2 from './../assets/images/image2.jpg';
+import Image3 from './../assets/images/image3.jpg';
 
 const data = [
   {
@@ -34,6 +34,6 @@ const data = [
     image: Image3,
     icon: <FaPaperPlane />,
   },
-]
+];
 
-export default data
+export default data;

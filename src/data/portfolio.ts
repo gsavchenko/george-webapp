@@ -1,6 +1,6 @@
-import Image1 from './../assets/images/image1.jpg'
-import Image2 from './../assets/images/image2.jpg'
-import Image3 from './../assets/images/image3.jpg'
+import Image1 from './../assets/images/image1.jpg';
+import Image2 from './../assets/images/image2.jpg';
+import Image3 from './../assets/images/image3.jpg';
 
 const data = [
   {
@@ -35,6 +35,6 @@ const data = [
     eget arcu dictum varius duis.`,
     image: Image1,
   },
-]
+];
 
-export default data
+export default data;

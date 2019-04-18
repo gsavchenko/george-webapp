@@ -1,32 +1,29 @@
-import React, { Component } from 'react'
-import Modal from 'react-responsive-modal'
+import React, { Component } from 'react';
+import Modal from 'react-responsive-modal';
 
 export class LightboxImage extends Component {
   state = {
     open: false,
-  }
+  };
 
   openModal = () => {
-    this.setState({ open: true })
+    this.setState({ open: true });
   }
 
   closeModal = () => {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
 
   render() {
-    const { title, caption, src } = this.props
+    // https://stackoverflow.com/questions/52249390/property-xyz-does-not-exist-on-type-readonly-children-reactnode-rea
+    const { title, caption, src } = this.props;
     return (
       <div>
         <Modal
           open={this.state.open}
           onClose={this.closeModal}
-          center
-          styles={{
-            modal: {
-              padding: 0,
-            },
-          }}
+          center={true}
+          styles={{ modal: { padding: 0 }}}
           showCloseIcon={true}
         >
           <img src={src} alt={title} />
@@ -39,13 +36,11 @@ export class LightboxImage extends Component {
         <img
           src={src}
           alt={title}
-          onClick={() => {
-            this.openModal()
-          }}
+          onClick={() => { this.openModal(); }}
         />
       </div>
-    )
+    );
   }
 }
 
-export default LightboxImage
+export default LightboxImage;
