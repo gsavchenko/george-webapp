@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 
-import Layout from './../../components/Layout'
+import Layout from '../../components/Layout'
 
 export class view extends Component {
   render() {
