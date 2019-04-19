@@ -112,6 +112,7 @@
       "check-type"
     ],
     "component-selector": [ false ],
-    "component-class-suffix": false
+    "component-class-suffix": false,
+    "no-submodule-imports": false
   }
 }
