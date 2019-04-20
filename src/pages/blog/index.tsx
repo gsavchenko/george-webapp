@@ -1,19 +1,18 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
-
-import Layout from '../../components/Layout'
-import { rhythm } from '../../utils/typography'
+import { graphql, Link } from 'gatsby';
+import get from 'lodash/get';
+import React from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../../components/Layout';
+import { rhythm } from '../../utils/typography';
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
       this,
-      'props.data.site.siteMetadata.description'
-    )
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+      'props.data.site.siteMetadata.description',
+    );
+    const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -24,7 +23,7 @@ class BlogIndex extends React.Component {
         />
         <h2>Blog</h2>
         {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.frontmatter.path
+          const title = get(node, 'frontmatter.title') || node.frontmatter.path;
           return (
             <div key={node.frontmatter.path}>
               <h3
@@ -39,14 +38,14 @@ class BlogIndex extends React.Component {
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const query = graphql`
   query {
@@ -76,4 +75,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

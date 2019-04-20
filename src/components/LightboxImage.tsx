@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import Modal from 'react-responsive-modal';
 
-export class LightboxImage extends Component {
+interface ILightBoxImageProps {
+  title: string;
+  caption: string;
+  src: string;
+}
+
+interface ILightBoxImageState {
+}
+
+export class LightboxImage extends Component<ILightBoxImageProps, ILightBoxImageState> {
   state = {
     open: false,
   };

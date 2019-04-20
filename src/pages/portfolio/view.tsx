@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-
-import Layout from '../../components/Layout'
+import { Link } from 'gatsby';
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../../components/Layout';
 
 export class view extends Component {
   render() {
@@ -11,31 +10,24 @@ export class view extends Component {
       description: 'default description',
       image: 'https://via.placeholder.com/350',
       website: 'https://via.placeholder.com',
-    }
-    const { title, description, image, website } = passedData
+    };
+    const { title, description, image, website } = passedData;
     return (
       <Layout>
         <Helmet>
           <title>{`${title} | Sai Krishna`}</title>
         </Helmet>
-        <Link to="/portfolio">&larr; back</Link>
+        <Link to='/portfolio'>&larr; back</Link>
         <h2>{title}</h2>
         <img src={image} />
         <div>
           {description}
           <br /> <br />
-          {website && (
-            <div>
-              Website:{' '}
-              <a href={website} target="_new">
-                {website}
-              </a>
-            </div>
-          )}
+          {website && (<div> Website:{' '} <a href={website} target='new'>{website}</a> </div>)}
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default view
+export default view;
