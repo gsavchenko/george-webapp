@@ -1,14 +1,18 @@
 import React from 'react';
-
 import { rhythm } from '../utils/typography';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
 
-class Layout extends React.Component {
+interface ILayoutProps {
+  style?: object;
+  location: string;
+}
+
+class Layout extends React.Component<ILayoutProps, {}> {
   render() {
     const { children } = this.props;
-    // const importedStyle = this.props.style;
+    const importedStyle = this.props.style;
     const defaultStyle = {
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -18,7 +22,7 @@ class Layout extends React.Component {
 
     const finalStyle = {
       ...defaultStyle,
-      // ...importedStyle,
+      ...importedStyle,
     };
     return (
       <div style={finalStyle}>

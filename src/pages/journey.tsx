@@ -1,26 +1,25 @@
-import React from 'react'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
+import { graphql } from 'gatsby';
+import get from 'lodash/get';
+import React from 'react';
+import Helmet from 'react-helmet';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component'
-import 'react-vertical-timeline-component/style.min.css'
-import { graphql } from 'gatsby'
-
-import Layout from '../components/Layout'
-import { rhythm } from '../utils/typography'
-import './../styles/timeline.css'
-import LightboxImage from '../components/LightboxImage'
-import journeyData from './../data/journey'
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import Layout from '../components/Layout';
+import LightboxImage from '../components/LightboxImage';
+import journeyData from '../data/journey';
+import { rhythm } from '../utils/typography';
+import './../styles/timeline.css';
 
 class Journey extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
       this,
-      'props.data.site.siteMetadata.description'
-    )
+      'props.data.site.siteMetadata.description',
+    );
 
     return (
       <Layout style={{ maxWidth: rhythm(45) }}>
@@ -34,15 +33,15 @@ class Journey extends React.Component {
 
         <div>
           <VerticalTimeline animate={false}>
-            {journeyData.map(e => (
+            {journeyData.map((e) => (
               <VerticalTimelineElement
-                className="vertical-timeline-element--work"
+                className='vertical-timeline-element--work'
                 date={e.date}
                 iconStyle={{ background: '#fff', color: '#34495e' }}
                 icon={e.icon}
                 key={e.headline}
               >
-                <h3 className="vertical-timeline-element-title">
+                <h3 className='vertical-timeline-element-title'>
                   {e.headline}
                 </h3>
                 <br />
@@ -60,11 +59,11 @@ class Journey extends React.Component {
           </VerticalTimeline>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default Journey
+export default Journey;
 
 export const query = graphql`
   query {
@@ -75,4 +74,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

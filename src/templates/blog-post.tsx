@@ -1,18 +1,17 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-
-import Bio from '../components/Bio'
-import Layout from '../components/Layout'
-import { rhythm, scale } from '../utils/typography'
+import { graphql, Link } from 'gatsby';
+import get from 'lodash/get';
+import React from 'react';
+import Helmet from 'react-helmet';
+import Bio from '../components/Bio';
+import Layout from '../components/Layout';
+import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteDescription = post.excerpt
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
+    const siteDescription = post.excerpt;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -21,7 +20,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Link to="/blog">&larr; Blog</Link>
+        <Link to='/blog'>&larr; Blog</Link>
         <h1>{post.frontmatter.title}</h1>
         <br />
         <p
@@ -52,25 +51,25 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.frontmatter.path} rel="prev">
+              <Link to={previous.frontmatter.path} rel='prev'>
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.frontmatter.path} rel="next">
+              <Link to={next.frontmatter.path} rel='next'>
                 {next.frontmatter.title} →
               </Link>
             )}
           </li>
         </ul>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -94,4 +93,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

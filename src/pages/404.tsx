@@ -1,7 +1,11 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import React from 'react';
+import Layout from '../components/Layout';
 
-class NotFoundPage extends React.Component {
+interface INotFoundPageProps {
+  location: string;
+}
+
+class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
   render() {
     return (
       <Layout location={this.props.location}>

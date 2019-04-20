@@ -1,24 +1,23 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
-import Hemlet from 'react-helmet'
-
-import Layout from '../components/Layout'
-import DisplayImage from './../assets/images/main_image.jpg'
+import { graphql } from 'gatsby';
+import get from 'lodash/get';
+import React from 'react';
+import Hemlet from 'react-helmet';
+import Layout from '../components/Layout';
+import DisplayImage from './../assets/images/main_image.jpg';
 
 class SiteIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
       this,
-      'props.data.site.siteMetadata.description'
-    )
+      'props.data.site.siteMetadata.description',
+    );
 
     return (
       <Layout>
         <Hemlet>
           <title>{siteTitle}</title>
-          <meta name="description" content={siteDescription} />
+          <meta name='description' content={siteDescription} />
         </Hemlet>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -37,11 +36,11 @@ class SiteIndex extends React.Component {
         </p>
         <img src={DisplayImage} alt={siteTitle} />
       </Layout>
-    )
+    );
   }
 }
 
-export default SiteIndex
+export default SiteIndex;
 
 export const query = graphql`
   query {
@@ -52,4 +51,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
