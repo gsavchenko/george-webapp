@@ -30,8 +30,7 @@ export class LightboxImage extends Component<ILightBoxImageProps, {}> {
           onClose={this.closeModal}
           center={true}
           styles={{ modal: { padding: 0 }}}
-          showCloseIcon={true}
-        >
+          showCloseIcon={true}>
           <img src={src} alt={title} />
           <div style={{ padding: 10 }}>
             <span style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</span>

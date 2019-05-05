@@ -19,7 +19,8 @@ class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
           style={{position: 'absolute'}}
           frameBorder={0}
           className='giphy-embed'
-          allowFullScreen={true}/>
+          allowFullScreen={true}>
+        </iframe>
         </div><p><a href='https://giphy.com/gifs/mind-seinfeild-OK27wINdQS5YQ'>via GIPHY</a></p>
       </Layout>
     );
