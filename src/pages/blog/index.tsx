@@ -5,7 +5,11 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 import { rhythm } from '../../utils/typography';
 
-class BlogIndex extends React.Component {
+interface IBlogIndexProps {
+  location: string;
+}
+
+class BlogIndex extends React.Component<IBlogIndexProps, {}> {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(

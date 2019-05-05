@@ -6,7 +6,28 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import { rhythm, scale } from '../utils/typography';
 
-class BlogPostTemplate extends React.Component {
+interface IMarkdownRemark {
+  html: string;
+  excerpt: string;
+  frontmatter: {
+    title: string;
+    date: string;
+    path: string;
+  };
+}
+
+interface IBlogPostTemplateProps {
+  location: string;
+  pageContext: {
+    previous: IMarkdownRemark,
+    next: IMarkdownRemark;
+  };
+  data: {
+    markdownRemark: IMarkdownRemark;
+  };
+}
+
+class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
