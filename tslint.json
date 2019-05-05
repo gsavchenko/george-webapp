@@ -102,7 +102,10 @@
       }
     ],
     "unified-signatures": true,
-    "variable-name": false,
+    "variable-name": [
+      false,
+      "ban-keywords"
+    ],
     "whitespace": [
       true,
       "check-branch",
