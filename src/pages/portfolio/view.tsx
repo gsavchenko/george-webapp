@@ -3,7 +3,20 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 
-export class view extends Component {
+interface IViewState {
+  title: string;
+  description: string;
+  image: string;
+  website: string;
+}
+
+interface IViewProps {
+  location: {
+    state: IViewState;
+  };
+}
+
+export class View extends Component<IViewProps, IViewState> {
   render() {
     const passedData = this.props.location.state || {
       title: 'default title',
@@ -30,4 +43,4 @@ export class view extends Component {
   }
 }
 
-export default view;
+export default View;

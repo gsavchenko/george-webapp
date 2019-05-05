@@ -5,8 +5,9 @@ import Header from './Header';
 import Navbar from './Navbar';
 
 interface ILayoutProps {
+  location?: string;
   style?: object;
-  location: string;
+  title?: string;
 }
 
 class Layout extends React.Component<ILayoutProps, {}> {
