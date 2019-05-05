@@ -4,7 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
-import { rhythm, scale } from '../utils/typography';
+import blogPostStyles from './blog-post.module.scss';
 
 interface IMarkdownRemark {
   html: string;
@@ -44,32 +44,13 @@ class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
         <Link to='/blog'>&larr; Blog</Link>
         <h1>{post.frontmatter.title}</h1>
         <br />
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
+        <p id={blogPostStyles['date-text']}>
           {post.frontmatter.date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr className={blogPostStyles['bottom-space']}/>
         <Bio />
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
+        <ul id={blogPostStyles['navigation-container']}>
           <li>
             {previous && (
               <Link to={previous.frontmatter.path} rel='prev'>

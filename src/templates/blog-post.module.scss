@@ -1,0 +1,18 @@
+#date-text {
+  scale: (-1 / 5);
+  display: block;
+  margin-bottom: rhythm(1);
+  margin-top: rhythm(-1);
+}
+
+#navigation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.bottom-space {
+  margin-bottom: rhythm(1);
+}
