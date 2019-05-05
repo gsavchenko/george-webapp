@@ -116,6 +116,7 @@
     ],
     "component-selector": [ false ],
     "component-class-suffix": false,
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "interface-name": false
   }
 }
