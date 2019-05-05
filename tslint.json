@@ -117,6 +117,7 @@
     "component-selector": [ false ],
     "component-class-suffix": false,
     "no-submodule-imports": false,
-    "interface-name": false
+    "interface-name": false,
+    "jsx-alignment": false
   }
 }
