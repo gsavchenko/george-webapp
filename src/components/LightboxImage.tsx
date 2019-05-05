@@ -7,10 +7,7 @@ interface ILightBoxImageProps {
   src: string;
 }
 
-interface ILightBoxImageState {
-}
-
-export class LightboxImage extends Component<ILightBoxImageProps, ILightBoxImageState> {
+export class LightboxImage extends Component<ILightBoxImageProps, {}> {
   state = {
     open: false,
   };
@@ -45,7 +42,7 @@ export class LightboxImage extends Component<ILightBoxImageProps, ILightBoxImage
         <img
           src={src}
           alt={title}
-          onClick={() => { this.openModal(); }}
+          onClick={this.openModal}
         />
       </div>
     );

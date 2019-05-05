@@ -22,18 +22,6 @@ class Contact extends React.Component {
         />
         <h2>Contact</h2>
         <br />
-        {Object.keys(contactData).map((key) => {
-          if (contactData[key]) {
-            return (
-              <p>
-                <b>{key}: </b>
-                <a href={contactData[key]} target='_new'>
-                  {contactData[key]}
-                </a>
-              </p>
-            );
-          }
-        })}
       </Layout>
     );
   }

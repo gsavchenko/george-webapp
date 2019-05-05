@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 import portfolioData from '../../data/portfolio';
 
-class portfolioIndex extends React.Component {
+class PortfolioIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
@@ -26,17 +26,7 @@ class portfolioIndex extends React.Component {
         <br />
         <div style={{ textAlign: 'center' }}>
           <Grid fluid={true}>
-            <Row> {portfolioData.map((p) => (
-                <Col xs={12} sm={12} md={6} lg={6} key={p.title}>
-                  <Link to={'/portfolio/view'} state={p} key={p.title}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <div style={{ width: 250, height: 200, margin: 10, background: `url(${p.image})`, backgroundSize: 'cover', backgroundPosition: 'center center' }}/>
-                      <p>{p.title}</p>
-                    </div>
-                  </Link>
-                </Col>
-              ))}
-            </Row>
+            <Row />
           </Grid>
         </div>
       </Layout>
@@ -44,7 +34,7 @@ class portfolioIndex extends React.Component {
   }
 }
 
-export default portfolioIndex;
+export default PortfolioIndex;
 
 export const query = graphql`
   query {
