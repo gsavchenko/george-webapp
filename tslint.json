@@ -118,6 +118,7 @@
     "component-class-suffix": false,
     "no-submodule-imports": false,
     "interface-name": false,
-    "jsx-alignment": false
+    "jsx-alignment": false,
+    "jsx-self-close": false
   }
 }
