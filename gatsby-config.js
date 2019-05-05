@@ -1,10 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-minimal-portfolio-blog',
-    author: 'Sai Krishna',
-    description:
-      'GatsbyJS starter for a minimal portfolio website with blog. Suitable for developers.',
-    siteUrl: 'https://saikrishna.me',
+    title: 'george-webapp',
+    author: 'George Savchenko',
+    description: 'Get your George Savchenko digest here!',
+    siteUrl: 'http://georgesavchenko.com',
   },
   pathPrefix: '/',
   plugins: [
@@ -22,6 +21,12 @@ module.exports = {
         test: /\.ts$|\.tsx$/,
         exclude: /(node_modules|cache|public)/
       }
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
