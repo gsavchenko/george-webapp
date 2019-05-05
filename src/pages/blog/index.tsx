@@ -26,24 +26,19 @@ class BlogIndex extends React.Component<IBlogIndexProps, {}> {
           title={`Blog | ${siteTitle}`}
         />
         <h2>Blog</h2>
-        {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.frontmatter.path;
           return (
-            <div key={node.frontmatter.path}>
+            <div key={posts[0].node.frontmatter.path}>
               <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
+                style={{ marginBottom: rhythm(1 / 4) }}
               >
-                <Link style={{ boxShadow: 'none' }} to={node.frontmatter.path}>
-                  {title}
+                <Link style={{ boxShadow: 'none' }} to={posts[0].node.frontmatter.path}>
+                  {posts[0].node.frontmatter.title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <small>{posts[0].node.frontmatter.date}</small>
+              <p dangerouslySetInnerHTML={{ __html: posts[0].node.excerpt }} />
             </div>
-          );
-        })}
       </Layout>
     );
   }
