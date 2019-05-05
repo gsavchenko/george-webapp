@@ -8,17 +8,19 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: false, // defaults to false
+        jsxPragma: `React`, // defaults to "React"
+        allExtensions: false, // defaults to false
+      },
+    },
+    {
       resolve: `gatsby-plugin-tslint`,
       options: {
         test: /\.ts$|\.tsx$/,
         exclude: /(node_modules|cache|public)/
       }
-    },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [],
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
