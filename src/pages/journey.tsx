@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
+import { FaAward } from 'react-icons/fa';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -9,8 +10,8 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import Layout from '../components/Layout';
 import LightboxImage from '../components/LightboxImage';
-import journeyData from '../data/journey';
 import { rhythm } from '../utils/typography';
+import Image1 from './../assets/images/image1.jpg';
 import './../styles/timeline.css';
 
 class Journey extends React.Component {
@@ -33,29 +34,24 @@ class Journey extends React.Component {
 
         <div>
           <VerticalTimeline animate={false}>
-            {journeyData.map((e) => (
               <VerticalTimelineElement
                 className='vertical-timeline-element--work'
-                date={e.date}
+                date={'some date'}
                 iconStyle={{ background: '#fff', color: '#34495e' }}
-                icon={e.icon}
-                key={e.headline}
+                icon={<FaAward />}
+                key={'headline'}
               >
                 <h3 className='vertical-timeline-element-title'>
-                  {e.headline}
+                  {'headline'}
                 </h3>
                 <br />
-                {/* <a href={e.image}>
-                  <img src={e.image} />
-                </a> */}
                 <LightboxImage
-                  src={e.image}
-                  title={e.headline}
-                  caption={e.description}
+                  src={Image1}
+                  title={'headline'}
+                  caption={'description'}
                 />
-                {e.description}
+                {'description'}
               </VerticalTimelineElement>
-            ))}
           </VerticalTimeline>
         </div>
       </Layout>
