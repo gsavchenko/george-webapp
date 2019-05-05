@@ -7,6 +7,8 @@
     "url": "https://github.com/s-kris/gatsby-minimal-portfolio-blog/issues"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.123",
+    "@types/react-helmet": "^5.0.8",
     "@types/typography": "^0.16.2",
     "gatsby": "^2.3.23",
     "gatsby-plugin-feed": "^2.0.8",
