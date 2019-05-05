@@ -9,12 +9,6 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [require(`postcss-preset-env`)({ stage: 0 })],
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
@@ -72,6 +66,13 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+      },
+    },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`
   ],
 }
