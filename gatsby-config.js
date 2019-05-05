@@ -1,13 +1,27 @@
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-minimal-portfolio-blog',
-    author: 'Sai Krishna',
-    description:
-      'GatsbyJS starter for a minimal portfolio website with blog. Suitable for developers.',
-    siteUrl: 'https://saikrishna.me',
+    title: 'george-webapp',
+    author: 'George Savchenko',
+    description: 'Get your George Savchenko digest here!',
+    siteUrl: 'http://georgesavchenko.com',
   },
   pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: false, // defaults to false
+        jsxPragma: `React`, // defaults to "React"
+        allExtensions: false, // defaults to false
+      },
+    },
+    {
+      resolve: `gatsby-plugin-tslint`,
+      options: {
+        test: /\.ts$|\.tsx$/,
+        exclude: /(node_modules|cache|public)/
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +45,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          'gatsby-plugin-typescript-checker',
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
@@ -69,10 +84,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require("sass"),
+        cssLoaderOptions: {
+          camelCase: false,
+        },
       },
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sitemap`
   ],
 }
