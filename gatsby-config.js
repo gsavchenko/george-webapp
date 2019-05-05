@@ -8,14 +8,6 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: false, // defaults to false
-        jsxPragma: `React`, // defaults to "React"
-        allExtensions: false, // defaults to false
-      },
-    },
-    {
       resolve: `gatsby-plugin-tslint`,
       options: {
         test: /\.ts$|\.tsx$/,
@@ -87,6 +79,13 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+      },
+    },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sass`
   ],
 }
