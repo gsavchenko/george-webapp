@@ -85,10 +85,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        implementation: require("sass"),
+        cssLoaderOptions: {
+          camelCase: false,
+        },
       },
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sitemap`
   ],
 }
