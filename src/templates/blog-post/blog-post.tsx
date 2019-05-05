@@ -2,37 +2,51 @@ import { graphql, Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Bio from '../components/Bio';
-import Layout from '../components/Layout';
+import Bio from '../../components/Bio';
+import Layout from '../../components/Layout';
 import blogPostStyles from './blog-post.module.scss';
-
-interface IMarkdownRemark {
-  html: string;
-  excerpt: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    path: string;
-  };
-}
+import { Frontmatter, MarkdownRemark, PageContext } from './models';
 
 interface IBlogPostTemplateProps {
   location: string;
-  pageContext: {
-    previous: IMarkdownRemark,
-    next: IMarkdownRemark;
-  };
+  pageContext: PageContext;
   data: {
-    markdownRemark: IMarkdownRemark;
+    markdownRemark: MarkdownRemark;
   };
 }
 
 class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
+  constructor(props) {
+    super(props);
+
+    this.getPostPath = this.getPostPath.bind(this);
+    this.getFrontmatter = this.getFrontmatter.bind(this);
+  }
+
+  private getPostPath(pageContext: PageContext): PageContext {
+    const newPageContext: PageContext = {
+      previous: this.getFrontmatter(pageContext.previous),
+      next: this.getFrontmatter(pageContext.next),
+    };
+
+    return newPageContext;
+  }
+
+  private getFrontmatter(markdownRemark: MarkdownRemark): MarkdownRemark {
+    const frontmatter = markdownRemark ? markdownRemark.frontmatter : new Frontmatter();
+    const updatedMarkdownRemark = {
+      ...markdownRemark,
+      frontmatter,
+    };
+
+    return updatedMarkdownRemark;
+  }
+
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const siteDescription = post.excerpt;
-    const { previous, next } = this.props.pageContext;
+    // const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -52,18 +66,14 @@ class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
         <Bio />
         <ul id={blogPostStyles['navigation-container']}>
           <li>
-            {previous && (
-              <Link to={previous.frontmatter.path} rel='prev'>
-                ← {previous.frontmatter.title}
+              <Link to={this.getPostPath(this.props.pageContext).previous.frontmatter.path} rel='prev'>
+                ← {this.getPostPath(this.props.pageContext).previous.frontmatter.title}
               </Link>
-            )}
           </li>
           <li>
-            {next && (
-              <Link to={next.frontmatter.path} rel='next'>
-                {next.frontmatter.title} →
+              <Link to={this.getPostPath(this.props.pageContext).next.frontmatter.path} rel='next'>
+                {this.getPostPath(this.props.pageContext).next.frontmatter.title} →
               </Link>
-            )}
           </li>
         </ul>
       </Layout>
