@@ -1,0 +1,6 @@
+@import '../../../../../styles/_theme.css';
+
+.body {
+  display: flex;
+  justify-content: center;
+}

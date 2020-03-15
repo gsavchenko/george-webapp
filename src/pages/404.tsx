@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../app/components/Layout';
 
 interface INotFoundPageProps {
   location: string;

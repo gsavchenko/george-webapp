@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../../components/Layout';
+import Layout from '../../app/components/Layout';
 
 interface IViewState {
   title: string;

@@ -2,8 +2,7 @@ import { graphql, Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../../components/Layout';
-import { rhythm } from '../../utils/typography';
+import Layout from '../../app/components/Layout';
 
 interface IBlogIndexProps {
   location: string;
@@ -29,10 +28,8 @@ class BlogIndex extends React.Component<IBlogIndexProps, {}> {
           const title = get(node, 'frontmatter.title') || node.frontmatter.path;
           return (
             <div key={posts[0].node.frontmatter.path}>
-              <h3
-                style={{ marginBottom: rhythm(1 / 4) }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={posts[0].node.frontmatter.path}>
+              <h3>
+                <Link to={posts[0].node.frontmatter.path}>
                   {posts[0].node.frontmatter.title}
                 </Link>
               </h3>

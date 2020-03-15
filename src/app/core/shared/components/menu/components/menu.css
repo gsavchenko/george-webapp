@@ -1,0 +1,75 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  white-space: nowrap;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#d30034+2,ab0c07+100 */
+  background: #d30034;
+
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #d30034 2%, #ab0c07 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #d30034 2%, #ab0c07 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #d30034 2%, #ab0c07 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d30034', endColorstr='#ab0c07', GradientType=1); /* IE6-9 */
+
+  &.sidenav-open {
+    width: 300px;
+
+    .right {
+      width: 8px;
+      height: 98vh;
+      background-color: #dfedf0;
+      top: 10px;
+      position: fixed;
+      right: calc(100%);
+      -webkit-transform: translate(300px, 0);
+      -moz-transform: translate(300px, 0);
+      -o-transform: translate(300px, 0);
+      -ms-transform: translate(300px, 0);
+      transform: translate(300px, 0);
+      transition: 0.45s;
+      -webkit-box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.5);
+      -moz-box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.5);
+      box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.5);
+      z-index: 2;
+    }
+
+    .right2 {
+      width: 16px;
+      height: 96vh;
+      background-color: #dfedf0;
+      top: 20px;
+      position: fixed;
+      right: calc(100%);
+      -webkit-transform: translate(300px, 0);
+      -moz-transform: translate(300px, 0);
+      -o-transform: translate(300px, 0);
+      -ms-transform: translate(300px, 0);
+      transform: translate(300px, 0);
+      transition: 0.35s;
+      -webkit-box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.35);
+      -moz-box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.35);
+      box-shadow: -8px 0px 16px 0px rgba(17, 37, 60, 0.35);
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
