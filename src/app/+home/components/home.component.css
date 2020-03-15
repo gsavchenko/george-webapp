@@ -1,0 +1,13 @@
+.container {
+  transition: 0.5s;
+
+  &.sidenav-open {
+    margin-left: 300px;
+    transition-timing-function: ease-in;
+
+    .button-container {
+      margin-left: 300px;
+      transition: 0.5s;
+    }
+  }
+}

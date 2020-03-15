@@ -1,0 +1,11 @@
+.stacklayout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .top {
+    height: 100px;
+    width: 100px;
+  }
+}

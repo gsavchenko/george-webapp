@@ -3,8 +3,8 @@ import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
-import contactData from '../data/contact';
+import Layout from '../app/components/Layout';
+import contactData from '../app/data/contact';
 
 class Contact extends React.Component {
   render() {
