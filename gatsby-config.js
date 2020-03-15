@@ -54,12 +54,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -76,19 +70,29 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: `gatsby-plugin-react-redux`,
       options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        cssLoaderOptions: {
-          camelCase: false,
+        // [required] - path to module you created in step 1
+        pathToCreateStoreModule: './src/app/core/store/store',
+        // [optional] - options passed to `serialize-javascript`
+        // info: https://github.com/yahoo/serialize-javascript#options
+        // will be merged with these defaults:
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
         },
       },
     },
-    `gatsby-plugin-sitemap`
+    {
+      resolve: "@danbruegge/gatsby-plugin-stylelint",
+      options: {
+        files: ["**/*.{ts,tsx}"],
+        configFile: './stylelint.config.js'
+      }
+    },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-ramda`,
+    `gatsby-plugin-postcss`
   ],
 }

@@ -8,11 +8,9 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Layout from '../components/Layout';
-import LightboxImage from '../components/LightboxImage';
-import { rhythm } from '../utils/typography';
+import Layout from '../app/components/Layout';
+import LightboxImage from '../app/components/LightboxImage';
 import Image1 from './../assets/images/image1.jpg';
-import './../styles/timeline.css';
 
 class Journey extends React.Component {
   render() {
@@ -23,7 +21,7 @@ class Journey extends React.Component {
     );
 
     return (
-      <Layout style={{ maxWidth: rhythm(45) }}>
+      <Layout>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}

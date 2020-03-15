@@ -4,8 +4,8 @@ import React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid';
 import Helmet from 'react-helmet';
 
-import Layout from '../../components/Layout';
-import portfolioData from '../../data/portfolio';
+import Layout from '../../app/components/Layout';
+import portfolioData from '../../app/data/portfolio';
 
 class PortfolioIndex extends React.Component {
   render() {

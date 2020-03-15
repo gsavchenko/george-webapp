@@ -119,6 +119,9 @@
     "no-submodule-imports": false,
     "interface-name": false,
     "jsx-alignment": false,
-    "jsx-self-close": false
+    "jsx-self-close": false,
+    "trailing-comma": false,
+    "jsx-wrap-multiline": false,
+    "ordered-imports": false
   }
 }

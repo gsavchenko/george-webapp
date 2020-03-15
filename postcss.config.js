@@ -1,3 +1,7 @@
-export default () => ({
-  plugins: [],
-});
+const precss = require('precss');
+
+module.exports = () => ({
+  plugins: [
+    precss('./src/*.css')
+  ],
+})
