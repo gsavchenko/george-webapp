@@ -122,6 +122,7 @@
     "jsx-self-close": false,
     "trailing-comma": false,
     "jsx-wrap-multiline": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "no-implicit-dependencies": false
   }
 }

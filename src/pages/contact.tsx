@@ -3,7 +3,6 @@ import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Layout from '../app/components/Layout';
 import contactData from '../app/data/contact';
 
 class Contact extends React.Component {
@@ -14,7 +13,7 @@ class Contact extends React.Component {
       'props.data.site.siteMetadata.description',
     );
     return (
-      <Layout>
+      <div>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -22,7 +21,7 @@ class Contact extends React.Component {
         />
         <h2>Contact</h2>
         <br />
-      </Layout>
+      </div>
     );
   }
 }

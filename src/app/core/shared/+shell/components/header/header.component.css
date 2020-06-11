@@ -3,18 +3,26 @@
   left: 20px;
   position: fixed;
   transition: 0.5s;
+  z-index: 10;
 }
 
-.container {
-  transition: 0.5s;
+.header {
+  padding: 20px;
+  transition: 0.45s;
 
   &.sidenav-open {
-    margin-left: 300px;
-    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    padding-left: 300px;
 
     .button-container {
-      margin-left: 300px;
-      transition: 0.5s;
+      padding-left: 300px;
+      transition: 0.45s;
+
+      @media screen and (max-width: 370px) {
+        & {
+          padding-left: 0px;
+        }
+      }
     }
   }
 }

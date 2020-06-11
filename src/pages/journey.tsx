@@ -8,9 +8,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Layout from '../app/components/Layout';
 import LightboxImage from '../app/components/LightboxImage';
-import Image1 from './../assets/images/image1.jpg';
 
 class Journey extends React.Component {
   render() {
@@ -21,7 +19,7 @@ class Journey extends React.Component {
     );
 
     return (
-      <Layout>
+      <div>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -43,16 +41,11 @@ class Journey extends React.Component {
                   {'headline'}
                 </h3>
                 <br />
-                <LightboxImage
-                  src={Image1}
-                  title={'headline'}
-                  caption={'description'}
-                />
                 {'description'}
               </VerticalTimelineElement>
           </VerticalTimeline>
         </div>
-      </Layout>
+      </div>
     );
   }
 }
