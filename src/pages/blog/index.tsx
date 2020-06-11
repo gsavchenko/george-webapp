@@ -2,7 +2,6 @@ import { graphql, Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../../app/components/Layout';
 
 interface IBlogIndexProps {
   location: string;
@@ -18,7 +17,7 @@ class BlogIndex extends React.Component<IBlogIndexProps, {}> {
     const posts = get(this, 'props.data.allMarkdownRemark.edges');
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <div title={siteTitle}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -36,7 +35,7 @@ class BlogIndex extends React.Component<IBlogIndexProps, {}> {
               <small>{posts[0].node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: posts[0].node.excerpt }} />
             </div>
-      </Layout>
+      </div>
     );
   }
 }

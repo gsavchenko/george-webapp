@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../../app/components/Layout';
 
 interface IViewState {
   title: string;
@@ -26,7 +25,7 @@ export class View extends Component<IViewProps, IViewState> {
     };
     const { title, description, image, website } = passedData;
     return (
-      <Layout>
+      <div>
         <Helmet>
           <title>{`${title} | Sai Krishna`}</title>
         </Helmet>
@@ -38,7 +37,7 @@ export class View extends Component<IViewProps, IViewState> {
           <br /> <br />
           {website && (<div> Website:{' '} <a href={website} target='new'>{website}</a> </div>)}
         </div>
-      </Layout>
+      </div>
     );
   }
 }

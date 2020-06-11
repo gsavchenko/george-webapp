@@ -1,6 +1,24 @@
-@import '../../../../../styles/_theme.css';
+@import '../../../../../styles/variables.css';
 
 .body {
   display: flex;
   justify-content: center;
+  transition: 0.5s;
+  flex: 1;
+
+  &.sidenav-open {
+    padding-left: 300px;
+  }
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  transition: 0.35s;
+  transition-timing-function: ease-out;
+
+  &.sidenav-open {
+    padding-left: 300px;
+  }
 }

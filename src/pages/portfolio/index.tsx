@@ -1,10 +1,8 @@
 import { graphql, Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
-import { Col, Grid, Row } from 'react-flexbox-grid';
 import Helmet from 'react-helmet';
 
-import Layout from '../../app/components/Layout';
 import portfolioData from '../../app/data/portfolio';
 
 class PortfolioIndex extends React.Component {
@@ -16,7 +14,7 @@ class PortfolioIndex extends React.Component {
     );
 
     return (
-      <Layout>
+      <div>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -24,12 +22,7 @@ class PortfolioIndex extends React.Component {
         />
         <h2>Portfolio</h2>
         <br />
-        <div style={{ textAlign: 'center' }}>
-          <Grid fluid={true}>
-            <Row />
-          </Grid>
-        </div>
-      </Layout>
+      </div>
     );
   }
 }

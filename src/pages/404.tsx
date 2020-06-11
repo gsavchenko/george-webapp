@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../app/components/Layout';
 
 interface INotFoundPageProps {
   location: string;
@@ -8,7 +7,7 @@ interface INotFoundPageProps {
 class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
   render() {
     return (
-      <Layout location={this.props.location}>
+      <div>
         <h1>Not Found</h1>
         <p>You just hit a route that doesn&#39;t exist....</p>
         <div style={{width: '100%', height: 0, paddingBottom: '70%', position: 'relative'}}>
@@ -22,7 +21,7 @@ class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
           allowFullScreen={true}>
         </iframe>
         </div><p><a href='https://giphy.com/gifs/mind-seinfeild-OK27wINdQS5YQ'>via GIPHY</a></p>
-      </Layout>
+      </div>
     );
   }
 }

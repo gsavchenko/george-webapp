@@ -6,7 +6,7 @@ import {
   HeaderState,
   HeaderProps,
   HeaderDispatch
-} from '../../components/header/store';
+} from '../../store';
 
 import * as Menu from '../../../components/menu/store/menu.actions';
 

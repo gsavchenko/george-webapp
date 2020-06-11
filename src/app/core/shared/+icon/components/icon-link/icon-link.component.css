@@ -1,0 +1,15 @@
+@import 'variables';
+
+.icon-container {
+  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+}

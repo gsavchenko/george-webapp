@@ -1,0 +1,10 @@
+@import 'variables';
+
+.footer {
+  @add-mixin secondary-font;
+
+  text-align: center;
+  padding: 25px 25px;
+  font-size: 14px;
+  color: white;
+}
