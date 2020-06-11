@@ -3,7 +3,6 @@ import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Bio from '../../components/Bio';
-import Layout from '../../components/Layout';
 import blogPostStyles from './blog-post.css';
 import { Frontmatter, MarkdownRemark, PageContext } from './models';
 
@@ -49,7 +48,7 @@ class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
     // const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <div title={siteTitle}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -76,7 +75,7 @@ class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
               </Link>
           </li>
         </ul>
-      </Layout>
+      </div>
     );
   }
 }
