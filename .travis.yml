@@ -9,11 +9,15 @@ script:
 after_success:
 - set -e
 - sudo apt-get install -y rsync
-- ./deploy.sh
+- "./deploy.sh"
 addons:
   ssh_known_hosts: 199.188.200.108:21098
 before_install:
-- openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
+  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
+notifications:
+  email:
+    if: branch = master
