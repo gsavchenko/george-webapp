@@ -11,7 +11,7 @@ after_success:
 - sudo apt-get install -y rsync
 - "./deploy.sh"
 addons:
-  ssh_known_hosts: 199.188.200.108:21098
+  ssh_known_hosts: 138.197.155.168
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
