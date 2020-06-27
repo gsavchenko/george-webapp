@@ -15,11 +15,6 @@
   --accent: var(--color-persian-blue);
   --tertiary: var(--color-cyprus);
 }
-
-:root {
-  --app-height: 100%;
-}
-
 body {
   margin: 0;
   background-color: var(--primary);
