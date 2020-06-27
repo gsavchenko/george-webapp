@@ -8,12 +8,6 @@ import styles from './shell.component.css';
 const cx = classnames.bind(styles);
 
 class Shell extends React.Component<ShellProps, {}> {
-  constructor(props: ShellProps) {
-    super(props);
-
-    this.setAppHeight = this.setAppHeight.bind(this);
-  }
-
   render() {
     return (
       <div className={cx('container', { 'sidenav-open' : this.props.menuToggled })}>
