@@ -19,16 +19,6 @@ class Shell extends React.Component<ShellProps, {}> {
       </div>
     );
   }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.setAppHeight);
-    this.setAppHeight();
-  }
-
-  private setAppHeight(): void {
-    const doc = document.documentElement;
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-  }
 }
 
 export default Shell;
