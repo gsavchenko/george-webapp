@@ -1,7 +1,7 @@
 @import "variables";
 
 #logo {
-  fill: var(--accent);
+  fill: var(--secondary);
 
   &.light {
     fill: white;
