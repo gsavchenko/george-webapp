@@ -10,13 +10,13 @@ class AnimatedDescription extends React.Component {
       <div className={cx('description-container')}>
         <section className={cx('rw-wrapper')}>
           <h1 className={cx('rw-title')}>
-            <span>Welcome, stranger. Enjoy. ♥</span>
+            <span>Hello stranger! Enjoy. ♥</span>
             <div id='subtitle-container'>
               <span className={cx('rw-subtitle')}>I am </span>
               <p className={cx('rw-words', 'rw-words-1')}>
+                <span>George.</span>
                 <span>a tinkerer.</span>
                 <span>a learner.</span>
-                <span>a builder.</span>
                 <span>a professional.</span>
                 <span>a developer.</span>
                 <span>making software fun.</span>
