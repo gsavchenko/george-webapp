@@ -16,10 +16,8 @@ class Home extends React.Component {
 
     return (
       <div>
-        <div className={cx('top-content')}>
         <Hemlet title={siteTitle} meta={[{name: 'description', content: siteDescription, }]}/>
         <AnimatedDescription />
-      </div>
         <AnimatedBackground />
       </div>
     );
