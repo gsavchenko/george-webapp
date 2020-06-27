@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import React from 'react';
 import Hemlet from 'react-helmet';
 import styles from './home.component.css';
+import { AnimatedBackground } from '../../core/shared/components';
 
 const cx = classnames.bind(styles);
 
@@ -15,9 +16,11 @@ class Home extends React.Component {
 
     return (
       <div>
+        <div className={cx('top-content')}>
         <Hemlet title={siteTitle} meta={[{name: 'description', content: siteDescription, }]}/>
         <AnimatedDescription />
-        <div id='animate-area'></div>
+      </div>
+        <AnimatedBackground />
       </div>
     );
   }
