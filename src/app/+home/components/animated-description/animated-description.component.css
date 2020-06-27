@@ -86,10 +86,10 @@
   }
 
   @media screen and (max-width: 760px) {
-    .rw-title span { font-size: 40px; }
+    .rw-title span { font-size: 35px; }
   }
 
   @media screen and (max-width: 568px) {
-    .rw-title span { font-size: 30px; }
+    .rw-title span { font-size: 25px; }
   }
 }
