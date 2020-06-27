@@ -8,6 +8,11 @@ import styles from './shell.component.css';
 const cx = classnames.bind(styles);
 
 class Shell extends React.Component<ShellProps, {}> {
+  constructor(props: ShellProps) {
+    super(props);
+
+    this.setAppHeight = this.setAppHeight.bind(this);
+  }
 
   render() {
     return (
@@ -19,6 +24,16 @@ class Shell extends React.Component<ShellProps, {}> {
         <Footer></Footer>
       </div>
     );
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.setAppHeight);
+    this.setAppHeight();
+  }
+
+  private setAppHeight(): void {
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
   }
 }
 
