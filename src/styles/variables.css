@@ -16,10 +16,18 @@
   --tertiary: var(--color-cyprus);
 }
 
+:root {
+  --app-height: 100%;
+}
+
 body {
   margin: 0;
   background-color: var(--primary);
   color: #fff;
+
+  @media not all and (hover:hover) {
+    height: var(--app-height);
+  }
 }
 
 @define-mixin primary-font {
