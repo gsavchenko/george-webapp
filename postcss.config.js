@@ -1,4 +1,3 @@
-const postcssViewportHeightCorrection = require('postcss-viewport-height-correction');
 const postcssCssVars = require('postcss-css-variables');
 const postcssMixins = require('postcss-mixins');
 const postcssImport = require('postcss-import');
