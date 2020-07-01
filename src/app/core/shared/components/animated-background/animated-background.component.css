@@ -12,7 +12,7 @@
 }
 
 #animate-area {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: var(--new-height);
   background-image: resolve('images/home-background.png');
