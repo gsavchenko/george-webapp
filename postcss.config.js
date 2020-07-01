@@ -13,7 +13,6 @@ module.exports = () => ({
     precss('./src/*.css'),
     postcssMixins(),
     postcssCssVars(),
-    autoprefixer(),
-    postcssViewportHeightCorrection()
+    autoprefixer()
   ]
 });
