@@ -11,7 +11,7 @@ classnames.bind(styles);
 
 class Home extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const siteTitle = 'George Savchenko';
     const siteDescription = get(this, 'props.data.site.siteMetadata.description');
 
     return (
