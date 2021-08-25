@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import portfolioData from '../../app/data/portfolio';
+import portfolioData from '../../data/portfolio';
 
 class PortfolioIndex extends React.Component {
   render() {

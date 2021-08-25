@@ -1,6 +1,6 @@
 import React from 'react';
-import { Home } from '../app/+home/components';
-import { ShellContainer } from '../app/core/shared/+shell';
+import { Home } from './home';
+import { ShellContainer } from '../features/+shell';
 
 class SiteIndex extends React.Component {
   render() {
