@@ -55,14 +55,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
-    `gatsby-plugin-manifest`,
+    {
+      resolve:`gatsby-plugin-manifest`,
+      options: { icons: [] }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
         // [required] - path to module you created in step 1
-        pathToCreateStoreModule: './src/app/core/store/store',
+        pathToCreateStoreModule: './src/app/store',
         // [optional] - options passed to `serialize-javascript`
         // info: https://github.com/yahoo/serialize-javascript#options
         // will be merged with these defaults:
@@ -85,3 +88,4 @@ module.exports = {
     `gatsby-plugin-postcss`
   ],
 }
+    
