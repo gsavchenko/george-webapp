@@ -2,7 +2,7 @@ import classnames from 'classnames/bind';
 import React from 'react';
 import * as styles from './menu.css';
 import { Logo } from '../../logo';
-import { IconLink } from '../../../../features/+icon';
+import { IconLink } from '../../../../features/icon';
 import { MenuProps, MenuState } from '../store';
 import {
   AiOutlineTwitter,

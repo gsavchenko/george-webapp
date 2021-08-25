@@ -1,7 +1,7 @@
 import { MdClose, MdMenu } from 'react-icons/md';
 import { MenuButtonState } from '../store/menu-button.reducer';
 import { MenuButtonProps } from '../store/menu-button.types';
-import { IconButton } from '../../../../features/+icon';
+import { IconButton } from '../../../../features/icon';
 import equals from 'ramda/src/equals';
 import React from 'react';
 import { isNil } from 'ramda';
