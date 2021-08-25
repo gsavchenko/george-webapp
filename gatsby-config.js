@@ -55,7 +55,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
-    `gatsby-plugin-manifest`,
+    {
+      resolve:`gatsby-plugin-manifest`,
+      options: { icons: [] }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -85,3 +88,4 @@ module.exports = {
     `gatsby-plugin-postcss`
   ],
 }
+    

@@ -5,6 +5,7 @@ import { MenuButtonProps } from '../store/menu-button.types';
 import { IconButton } from '../../../+icon';
 import equals from 'ramda/src/equals';
 import React from 'react';
+import { isNil } from 'ramda';
 
 class MenuButton extends React.Component<MenuButtonProps, MenuButtonState> {
   private _icon = {
@@ -29,7 +30,7 @@ class MenuButton extends React.Component<MenuButtonProps, MenuButtonState> {
 
   private _toggle(): void {
     const emptyCallback = () => {};
-    const callback = fromNullable(this.props.onClick).getOrElse(emptyCallback);
+    const callback = !isNil(this.props.onClick) ? this.props.onClick : emptyCallback;
 
     equals(this.props.toggled, false)
     ? this.props.turnOn()

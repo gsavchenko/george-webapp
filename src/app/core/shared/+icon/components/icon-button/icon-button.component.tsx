@@ -3,6 +3,7 @@ import { IconButtonProps } from '../../store';
 import styles from './icon-button.component.css';
 import classnames from 'classnames/bind';
 import React from 'react';
+import { isNil } from 'ramda';
 
 const cx = classnames.bind(styles);
 
@@ -26,9 +27,10 @@ class IconButton extends React.Component<IconButtonProps, {}> {
 
   private _toggle(): void {
     const emptyCallback = () => {};
-    const callback = fromNullable(this.props.onClick).getOrElse(emptyCallback);
-
-    callback();
+    
+    !isNil(this.props.onClick)
+      ? this.props.onClick()
+      : emptyCallback();
   }
 }
 
