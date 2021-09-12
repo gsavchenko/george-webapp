@@ -16,13 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-tslint`,
-      options: {
-        test: /\.ts$|\.tsx$/,
-        exclude: /(node_modules|cache|public)/
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
@@ -56,8 +49,8 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
     {
-      resolve:`gatsby-plugin-manifest`,
-      options: { icons: [] }
+      resolve: `gatsby-plugin-manifest`,
+      options: { icons: [] },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
@@ -77,15 +70,14 @@ module.exports = {
       },
     },
     {
-      resolve: "@danbruegge/gatsby-plugin-stylelint",
+      resolve: '@danbruegge/gatsby-plugin-stylelint',
       options: {
-        files: ["**/*.{ts,tsx}"],
-        configFile: './stylelint.config.js'
-      }
+        files: ['**/*.{ts,tsx}'],
+        configFile: './stylelint.config.js',
+      },
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-ramda`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
   ],
 }
-    
