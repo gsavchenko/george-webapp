@@ -27,5 +27,6 @@ module.exports = {
   rules: {
     'no-anonymous-exports-page-templates': 'warn',
     'limited-exports-page-templates': 'warn',
+    'comma-dangle': 'never'
   },
 };
