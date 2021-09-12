@@ -9,7 +9,7 @@ const gatsbyRequiredRules = path.join(
   'dist',
   'utils',
   'eslint-rules'
-)
+);
 
 module.exports = {
   siteMetadata: {
@@ -106,4 +106,4 @@ module.exports = {
     'gatsby-plugin-ramda',
     'gatsby-plugin-postcss',
   ],
-}
+};
