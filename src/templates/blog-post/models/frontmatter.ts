@@ -4,8 +4,10 @@ interface IFrontmatter {
   path: string;
 }
 
-export class Frontmatter implements IFrontmatter {
+export default class Frontmatter implements IFrontmatter {
   title: string;
+
   date: string;
+
   path: string;
 }

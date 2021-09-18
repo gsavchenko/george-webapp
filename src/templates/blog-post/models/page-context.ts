@@ -1,6 +1,6 @@
 import { MarkdownRemark } from './markdown-remark';
 
-export interface PageContext {
+export default interface PageContext {
   previous: MarkdownRemark;
   next: MarkdownRemark;
 }

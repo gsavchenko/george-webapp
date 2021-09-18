@@ -8,4 +8,4 @@ module.exports = {
     'declaration-block-trailing-semicolon': null,
     'at-rule-no-unknown': null
   }
-}
+};

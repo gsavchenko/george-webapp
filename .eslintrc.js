@@ -25,8 +25,13 @@ module.exports = {
     'plugin:@typescript-eslint/recommended'
   ],
   rules: {
-    'no-anonymous-exports-page-templates': 'warn',
-    'limited-exports-page-templates': 'warn',
-    'comma-dangle': ['error', 'never']
+    'comma-dangle': ['error', 'never'],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    // note you must disable the base rule as it can report incorrect errors
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    semi: 'off'
   }
-};
+}

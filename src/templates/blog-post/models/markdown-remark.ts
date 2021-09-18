@@ -1,4 +1,4 @@
-import { Frontmatter } from './frontmatter';
+import Frontmatter from './frontmatter';
 
 export interface MarkdownRemark {
   html: string;
