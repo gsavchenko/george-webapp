@@ -2,10 +2,12 @@ import { graphql, Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
+import classnames from 'classnames';
 import Bio from '../../common/components/Bio';
 import * as blogPostStyles from './blog-post.css';
-import { Frontmatter, MarkdownRemark, PageContext } from './models';
-import classnames from 'classnames';
+import Frontmatter from './models/frontmatter';
+import PageContext from './models/page-context';
+import { MarkdownRemark } from './models/markdown-remark';
 
 classnames.bind(blogPostStyles);
 
@@ -17,70 +19,65 @@ interface IBlogPostTemplateProps {
   };
 }
 
-class BlogPostTemplate extends React.Component<IBlogPostTemplateProps, {}> {
-  constructor(props) {
-    super(props);
+const BlogPostTemplate: React.FC<IBlogPostTemplateProps> = (props) => {
+  const { data, pageContext, location } = props;
 
-    this.getPostPath = this.getPostPath.bind(this);
-    this.getFrontmatter = this.getFrontmatter.bind(this);
-  }
-
-  private getPostPath(pageContext: PageContext): PageContext {
-    const newPageContext: PageContext = {
-      previous: this.getFrontmatter(pageContext.previous),
-      next: this.getFrontmatter(pageContext.next),
-    };
-
-    return newPageContext;
-  }
-
-  private getFrontmatter(markdownRemark: MarkdownRemark): MarkdownRemark {
+  const getFrontmatter = (markdownRemark: MarkdownRemark): MarkdownRemark => {
     const frontmatter = markdownRemark ? markdownRemark.frontmatter : new Frontmatter();
     const updatedMarkdownRemark = {
       ...markdownRemark,
-      frontmatter,
+      frontmatter
     };
 
     return updatedMarkdownRemark;
   }
 
-  render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
-    const siteDescription = post.excerpt;
-    // const { previous, next } = this.props.pageContext;
+  const getPostPath = (context: PageContext): PageContext => {
+    const newPageContext: PageContext = {
+      previous: getFrontmatter(context.previous),
+      next: getFrontmatter(context.next)
+    };
 
-    return (
-      <div title={siteTitle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        />
-        <Link to='/blog'>&larr; Blog</Link>
-        <h1>{post.frontmatter.title}</h1>
-        <br />
-        <p id='date-text'>
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr className='bottom-space'/>
-        <Bio />
-        <ul id='navigation-container'>
-          <li>
-              <Link to={this.getPostPath(this.props.pageContext).previous.frontmatter.path} rel='prev'>
-                ← {this.getPostPath(this.props.pageContext).previous.frontmatter.title}
-              </Link>
-          </li>
-          <li>
-              <Link to={this.getPostPath(this.props.pageContext).next.frontmatter.path} rel='next'>
-                {this.getPostPath(this.props.pageContext).next.frontmatter.title} →
-              </Link>
-          </li>
-        </ul>
-      </div>
-    );
+    return newPageContext;
   }
+
+  const post = data.markdownRemark;
+  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const siteDescription = post.excerpt;
+  // const { previous, next } = this.props.pageContext;
+
+  return (
+    <div title={siteTitle}>
+      <Helmet
+        htmlAttributes={{ lang: 'en' }}
+        meta={[{ name: 'description', content: siteDescription }]}
+        title={`${post.frontmatter.title} | ${siteTitle}`}
+      />
+      <Link to="/blog">&larr; Blog</Link>
+      <h1>{post.frontmatter.title}</h1>
+      <br />
+      <p id="date-text">
+        {post.frontmatter.date}
+      </p>
+      {/* <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
+      <hr className="bottom-space" />
+      <Bio />
+      <ul id="navigation-container">
+        <li>
+          <Link to={getPostPath(pageContext).previous.frontmatter.path} rel="prev">
+            ←
+            {getPostPath(pageContext).previous.frontmatter.title}
+          </Link>
+        </li>
+        <li>
+          <Link to={getPostPath(pageContext).next.frontmatter.path} rel="next">
+            {getPostPath(pageContext).next.frontmatter.title}
+            →
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
 
 export default BlogPostTemplate;
