@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaAward, FaPaperPlane } from 'react-icons/fa';
 
-import Image1 from './../assets/images/image1.jpg';
-import Image2 from './../assets/images/image2.jpg';
-import Image3 from './../assets/images/image3.jpg';
+import Image1 from '../assets/images/image1.jpg';
+import Image2 from '../assets/images/image2.jpg';
+import Image3 from '../assets/images/image3.jpg';
 
 const data = [
   {
@@ -13,7 +13,7 @@ const data = [
     malesuada. Quis imperdiet massa tincidunt nunc pulvinar sapien et
     ligula ullamcorper.`,
     image: Image1,
-    icon: <FaAward />,
+    icon: <FaAward />
   },
   {
     date: 'November 26th 2011',
@@ -22,7 +22,7 @@ const data = [
     malesuada. Quis imperdiet massa tincidunt nunc pulvinar sapien et
     ligula ullamcorper.`,
     image: Image2,
-    icon: <FaPaperPlane />,
+    icon: <FaPaperPlane />
   },
 
   {
@@ -32,8 +32,8 @@ const data = [
     malesuada. Quis imperdiet massa tincidunt nunc pulvinar sapien et
     ligula ullamcorper.`,
     image: Image3,
-    icon: <FaPaperPlane />,
-  },
+    icon: <FaPaperPlane />
+  }
 ];
 
 export default data;
