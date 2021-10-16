@@ -29,6 +29,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    'max-len': 'off',
     // note you must disable the base rule as it can report incorrect errors
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
