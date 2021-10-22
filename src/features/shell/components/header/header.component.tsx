@@ -1,37 +1,34 @@
-import { MenuButtonContainer, MenuContainer } from '../../../../common/components';
-import { HeaderState, HeaderProps } from '../../store';
-import { Logo } from '../../../../common/components/logo';
 import React from 'react';
-import * as styles from './header.component.css';
 import classnames from 'classnames/bind';
 import equals from 'ramda/src/equals';
+import { MenuButtonContainer, MenuContainer } from '../../../../common/components';
+import { Logo } from '../../../../common/components/logo';
+import * as styles from './header.component.css';
 
 const cx = classnames.bind(styles);
+interface HeaderProps {
+  menuToggled: boolean
+  openMenu: () => void
+  closeMenu: () => void
+}
 
-class Header extends React.Component <HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
+const Header:React.FC<HeaderProps> = (props) => {
+  const { menuToggled, openMenu, closeMenu } = props;
 
-    this._toggleMenu = this._toggleMenu.bind(this);
+  const toggleMenu = () => {
+    if (equals(menuToggled, false)) openMenu()
+    else closeMenu();
   }
 
-  render() {
-    return (
-      <div className={cx('header', { 'sidenav-open' : this.props.menuToggled })}>
-        <div className={cx('button-container')}>
-          <MenuButtonContainer onClick={this._toggleMenu} />
-        </div>
-        <Logo />
-        <MenuContainer />
+  return (
+    <div className={cx('header', { 'sidenav-open': menuToggled })}>
+      <div className={cx('button-container')}>
+        <MenuButtonContainer onClick={toggleMenu} />
       </div>
-    );
-  }
-
-  private _toggleMenu(): void {
-    equals(this.props.menuToggled, false)
-    ? this.props.openMenu()
-    : this.props.closeMenu();
-  }
+      <Logo />
+      <MenuContainer />
+    </div>
+  )
 }
 
 export default Header;
