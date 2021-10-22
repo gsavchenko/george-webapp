@@ -3,7 +3,7 @@ import React from 'react';
 import { IconType } from 'react-icons';
 import * as styles from './icon.component.css';
 
-interface IconProps {
+export interface IconProps {
   icon: IconType;
 }
 
