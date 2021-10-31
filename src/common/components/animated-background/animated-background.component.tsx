@@ -4,10 +4,6 @@ import * as styles from './animated-background.component.css';
 
 classnames.bind(styles);
 
-class AnimatedBackground extends React.Component {
-  render() {
-    return (<div id='animate-area'></div>);
-  }
-}
+const AnimatedBackground:React.FC = () => <div id="animate-area" />
 
 export default AnimatedBackground;
