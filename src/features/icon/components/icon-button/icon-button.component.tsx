@@ -1,36 +1,38 @@
-import { IconButtonProps } from '../../store';
-import * as styles from './icon-button.component.css';
-import classnames from 'classnames/bind';
-import React from 'react';
-import { isNil } from 'ramda';
+import classnames from 'classnames/bind'
+import React from 'react'
+import { isNil } from 'ramda'
 
-const cx = classnames.bind(styles);
+import { IconProps } from '../icon.component'
 
-class IconButton extends React.Component<IconButtonProps, {}> {
-  constructor(props: IconButtonProps) {
-    super(props);
+import * as styles from './icon-button.component.css'
 
-    this._toggle = this._toggle.bind(this);
-  }
-
-  render() {
-    const IconProp = this.props.icon;
-    return (
-      <div className={cx('menu-button')} onClick={this._toggle}>
-        <div className={cx('icon-container')}>
-          <IconProp className={cx('icon')} size={36}></IconProp>
-        </div>
-      </div>
-    );
-  }
-
-  private _toggle(): void {
-    const emptyCallback = () => {};
-
-    !isNil(this.props.onClick)
-      ? this.props.onClick()
-      : emptyCallback();
-  }
+interface IconButtonProps extends IconProps {
+  onClick: () => void
 }
 
-export default IconButton;
+const cx = classnames.bind(styles)
+
+const IconButton: React.FC<IconButtonProps> = (props) => {
+  const { icon, onClick } = props
+  const IconComponent = icon
+
+  const toggle = (): void => {
+    if (!isNil(onClick)) onClick()
+  }
+
+  return (
+    <div
+      className={cx('menu-button')}
+      onClick={toggle}
+      onKeyPress={toggle}
+      role="button"
+      tabIndex={0}
+    >
+      <div className={cx('icon-container')}>
+        <IconComponent className={cx('icon')} size={36} />
+      </div>
+    </div>
+  )
+}
+
+export default IconButton
