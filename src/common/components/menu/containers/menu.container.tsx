@@ -11,13 +11,12 @@ const mapStateToProps = (state: AppState): MenuState => ({
   toggled: state.menu.toggled
 });
 
-class MenuContainer extends React.Component<MenuProps, MenuState> {
-  render() {
-    return (
-      <Menu toggled={this.props.toggled}/>
-    );
-  }
+const MenuContainer:React.FC<MenuProps> = (props) => {
+  const { toggled } = props;
+
+  return (
+    <Menu toggled={toggled} />
+  );
 }
 
-export default connect<MenuState>
-(mapStateToProps)(MenuContainer);
+export default connect<MenuState>(mapStateToProps)(MenuContainer);
