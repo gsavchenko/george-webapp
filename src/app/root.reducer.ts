@@ -1,6 +1,6 @@
+import { combineReducers } from 'redux';
 import { MenuReducer } from '../common/components/menu';
 import { MenuButtonReducer } from '../common/components/menu-button';
-import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
   menu: MenuReducer,
