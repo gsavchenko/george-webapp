@@ -1,42 +1,37 @@
 import { MdClose, MdMenu } from 'react-icons/md';
-import { MenuButtonState } from '../store/menu-button.reducer';
-import { MenuButtonProps } from '../store/menu-button.types';
-import { IconButton } from '../../../../features/icon';
 import equals from 'ramda/src/equals';
 import React from 'react';
 import { isNil } from 'ramda';
 
-class MenuButton extends React.Component<MenuButtonProps, MenuButtonState> {
-  private _icon = {
+import { MenuButtonProps } from '../store/menu-button.types';
+import { IconButton } from '../../../../features/icon/components/icon-button';
+
+const MenuButton: React.FC<MenuButtonProps> = (props) => {
+  const {
+    toggled,
+    onClick,
+    turnOn,
+    turnOff
+  } = props;
+
+  const icon = {
     open: MdMenu,
     closed: MdClose
   };
 
-  constructor(props: MenuButtonProps) {
-    super(props);
+  const toggle = (): void => {
+    if (equals(toggled, false)) turnOn()
+    else turnOff();
 
-    this._toggle = this._toggle.bind(this);
+    if (!isNil(onClick)) onClick();
   }
 
-  render() {
-    return (
-      <IconButton
-        icon={equals(this.props.toggled, true) ? this._icon.closed : this._icon.open}
-        onClick={this._toggle}>
-      </IconButton>
-    );
-  }
-
-  private _toggle(): void {
-    const emptyCallback = () => {};
-    const callback = !isNil(this.props.onClick) ? this.props.onClick : emptyCallback;
-
-    equals(this.props.toggled, false)
-    ? this.props.turnOn()
-    : this.props.turnOff();
-
-    callback();
-  }
+  return (
+    <IconButton
+      icon={equals(toggled, true) ? icon.closed : icon.open}
+      onClick={toggle}
+    />
+  );
 }
 
 export default MenuButton;
