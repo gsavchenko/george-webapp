@@ -14,25 +14,27 @@ const mapStateToProps = (state: AppState): MenuButtonState => ({
   toggled: state.menuButton.toggled
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<MenuButtonActions.Actions>): MenuButtonDispatch => {
-  return {
-    turnOn: () => dispatch(MenuButtonActions.turnOn()),
-    turnOff: () => dispatch(MenuButtonActions.turnOff())
-  };
-};
+const mapDispatchToProps = (dispatch: Dispatch<MenuButtonActions.Actions>): MenuButtonDispatch => ({
+  turnOn: () => dispatch(MenuButtonActions.turnOn()),
+  turnOff: () => dispatch(MenuButtonActions.turnOff())
+});
 
-class MenuButtonContainer extends React.Component<MenuButtonProps, MenuButtonState> {
-  render() {
-    return (
-      <MenuButton
-        turnOn={this.props.turnOn}
-        turnOff={this.props.turnOff}
-        toggled={this.props.toggled}
-        onClick={this.props.onClick}>
-      </MenuButton>
-    );
-  }
+const MenuButtonContainer: React.FC<MenuButtonProps> = (props) => {
+  const {
+    turnOff,
+    turnOn,
+    toggled,
+    onClick
+  } = props;
+
+  return (
+    <MenuButton
+      turnOn={turnOn}
+      turnOff={turnOff}
+      toggled={toggled}
+      onClick={onClick}
+    />
+  );
 }
 
-export default (connect)<MenuButtonState, MenuButtonDispatch>
-(mapStateToProps, mapDispatchToProps)(MenuButtonContainer);
+export default (connect)<MenuButtonState, MenuButtonDispatch>(mapStateToProps, mapDispatchToProps)(MenuButtonContainer);
