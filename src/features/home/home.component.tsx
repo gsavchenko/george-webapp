@@ -4,8 +4,8 @@ import get from 'lodash/get';
 import React from 'react';
 import Hemlet from 'react-helmet';
 
-import { AnimatedDescription } from './animated-description';
-import { AnimatedBackground } from '../../common/components/animated-background';
+import AnimatedDescription from './animated-description/animated-description.component';
+import AnimatedBackground from '../../common/components/animated-background/animated-background.component';
 
 import * as styles from './home.component.css';
 

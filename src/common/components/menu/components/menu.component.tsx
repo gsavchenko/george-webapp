@@ -6,8 +6,8 @@ import {
   AiFillLinkedin
 } from 'react-icons/ai';
 
-import { Logo } from '../../logo';
-import { IconLink } from '../../../../features/icon/components/icon-link';
+import Logo from '../../../../common/components/logo/logo';
+import IconLink from '../../../../features/icon/components/icon-link/icon-link.component';
 import { MenuProps } from '../store';
 
 import * as styles from './menu.css';

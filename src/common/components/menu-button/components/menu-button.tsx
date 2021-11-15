@@ -4,7 +4,7 @@ import React from 'react';
 import { isNil } from 'ramda';
 
 import { MenuButtonProps } from '../store/menu-button.types';
-import { IconButton } from '../../../../features/icon/components/icon-button';
+import IconButton from '../../../../features/icon/components/icon-button/icon-button.component';
 
 const MenuButton: React.FC<MenuButtonProps> = (props) => {
   const {

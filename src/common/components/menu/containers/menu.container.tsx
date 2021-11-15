@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { AppState } from '../../../../app';
-import { Menu } from '../components';
+import Menu from '../components/menu.component';
 import {
   MenuProps,
   MenuState
