@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { AppState } from '../../../../app/root.reducer';
-import { MenuButton } from '../components';
+import MenuButton from '../components/menu-button';
 import * as MenuButtonActions from '../store/menu-button.actions';
 import { MenuButtonState } from '../store/menu-button.reducer';
 import {

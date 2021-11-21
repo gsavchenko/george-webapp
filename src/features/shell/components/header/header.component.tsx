@@ -1,8 +1,9 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 import equals from 'ramda/src/equals';
-import { MenuButtonContainer, MenuContainer } from '../../../../common/components';
-import { Logo } from '../../../../common/components/logo';
+import MenuContainer from '../../../../common/components/menu/containers/menu.container';
+import MenuButtonContainer from '../../../../common/components/menu-button/containers/menu-button.container';
+import Logo from '../../../../common/components/logo/logo';
 import * as styles from './header.component.css';
 
 const cx = classnames.bind(styles);
