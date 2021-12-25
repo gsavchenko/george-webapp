@@ -83,13 +83,6 @@ module.exports = {
       }
     },
     {
-      resolve: '@danbruegge/gatsby-plugin-stylelint',
-      options: {
-        files: ['**/*.{ts,tsx}'],
-        configFile: './stylelint.config.js'
-      }
-    },
-    {
       resolve: 'gatsby-plugin-eslint',
       options: {
         // Gatsby required rules directory
