@@ -16,7 +16,7 @@ const Shell: React.FC<ShellProps> = (props) => {
   return (
     // <div className={cx('container', { 'sidenav-open': menuToggled })}>
     <div className={cx('container')}>
-      <HeaderContainer />
+      <HeaderContainer openMenu={undefined} closeMenu={undefined} />
       {/* <div className={cx('body', { 'sidenav-open': menuToggled })}> */}
       <div className={cx('body')}>
         {children}
