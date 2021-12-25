@@ -7,7 +7,7 @@ import Logo from '../../../../common/components/logo/logo';
 import * as styles from './header.component.css';
 
 const cx = classnames.bind(styles);
-interface HeaderProps {
+export interface HeaderProps {
   menuToggled: boolean
   openMenu: () => void
   closeMenu: () => void

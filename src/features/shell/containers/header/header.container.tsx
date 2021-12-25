@@ -1,30 +1,23 @@
-import React, { Dispatch } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { AppState } from '../../../../app';
-import { Header } from '../../components';
-import {
-  HeaderState,
-  HeaderProps,
-  HeaderDispatch
-} from '../../store';
+import Header, { HeaderProps } from '../../components/header/header.component';
 
-import * as Menu from '../../../../common/components/menu/store/menu.actions';
+export interface HeaderDispatch {
+  openMenu?(): void;
+  closeMenu?(): void;
+}
+
+interface HeaderState {
+  menuToggled?: boolean;
+}
 
 const mapStateToProps = (state: AppState): HeaderState => ({
   menuToggled: state.menu.toggled
-});
-
-const mapDispatchToProps = (dispatch: Dispatch<Menu.Actions>): HeaderDispatch => ({
-  openMenu: () => dispatch(Menu.open()),
-  closeMenu: () => dispatch(Menu.close())
-});
+})
 
 const HeaderContainer = (props: HeaderProps) => {
-  const {
-    openMenu,
-    closeMenu,
-    menuToggled
-  } = props;
+  const { openMenu, closeMenu, menuToggled } = props
 
   return (
     <Header
@@ -32,7 +25,7 @@ const HeaderContainer = (props: HeaderProps) => {
       closeMenu={closeMenu}
       menuToggled={menuToggled}
     />
-  );
+  )
 }
 
-export default connect<HeaderState, HeaderProps>(mapStateToProps, mapDispatchToProps)(HeaderContainer);
+export default connect<HeaderState, HeaderProps>(mapStateToProps)(HeaderContainer)
