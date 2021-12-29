@@ -16,13 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-tslint`,
-      options: {
-        test: /\.ts$|\.tsx$/,
-        exclude: /(node_modules|cache|public)/
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
