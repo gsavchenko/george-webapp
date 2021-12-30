@@ -1,7 +1,38 @@
-// Gatsby's required rules
 {
+  "parser": "@babel/eslint-parser",
+  "settings": {
+    "react": {
+      "version": "detect" // detect react version
+    }
+  },
   "rules": {
     "no-anonymous-exports-page-templates": "warn",
     "limited-exports-page-templates": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true // defines things like process.env when generating through node
+  },
+  "extends": [
+    "eslint:recommended", // use recommended configs
+    "plugin:react/recommended"
+  ],
+  "globals": {
+    "graphql": false
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "babelOptions": {
+      "presets": [
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ]
+    }
   }
 }
