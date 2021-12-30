@@ -5,10 +5,6 @@
       "version": "detect" // detect react version
     }
   },
-  "rules": {
-    "no-anonymous-exports-page-templates": "warn",
-    "limited-exports-page-templates": "warn"
-  },
   "env": {
     "browser": true,
     "es6": true,
@@ -17,20 +13,30 @@
   "extends": [
     "eslint:recommended", // use recommended configs
     "plugin:react/recommended"
+    // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
-    "graphql": false
+    "graphql": true
+  },
+  "rules": {
+    "no-anonymous-exports-page-templates": "warn",
+    "limited-exports-page-templates": "warn",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "react/no-unescaped-entities": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off"
   },
   "parserOptions": {
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "requireConfigFile": false,
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
       "jsx": true
     },
     "babelOptions": {
       "presets": [
-        "@babel/preset-react",
+        "babel-preset-gatsby",
         "@babel/preset-typescript"
       ]
     }
