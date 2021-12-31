@@ -12,7 +12,8 @@
   },
   "extends": [
     "eslint:recommended", // use recommended configs
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    // "airbnb"
     // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
