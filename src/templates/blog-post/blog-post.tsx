@@ -20,7 +20,6 @@ interface IBlogPostTemplateProps {
 }
 
 const BlogPostTemplate: React.FC<IBlogPostTemplateProps> = (props) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, pageContext, location } = props;
 
   const getFrontmatter = (markdownRemark: MarkdownRemark): MarkdownRemark => {
