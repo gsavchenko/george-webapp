@@ -1,5 +1,6 @@
 {
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect" // detect react version
@@ -13,6 +14,8 @@
   "extends": [
     "eslint:recommended", // use recommended configs
     "plugin:react/recommended"
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking"
     // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
@@ -25,7 +28,7 @@
     "no-unused-vars": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
   },
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -34,6 +37,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "project": ["./tsconfig.json"],
     "babelOptions": {
       "presets": [
         "babel-preset-gatsby",
