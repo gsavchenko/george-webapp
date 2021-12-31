@@ -12,7 +12,7 @@
   },
   "extends": [
     "eslint:recommended", // use recommended configs
-    "plugin:react/recommended"
+    "plugin:react/recommended",
     // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
