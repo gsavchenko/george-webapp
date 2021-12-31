@@ -22,13 +22,10 @@
     "graphql": true
   },
   "rules": {
-    "no-anonymous-exports-page-templates": "warn",
-    "limited-exports-page-templates": "warn",
-    "no-undef": "off",
     "no-unused-vars": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
-    "react/prop-types": "off",
+    "react/prop-types": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2020,
