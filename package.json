@@ -59,9 +59,9 @@
     "webpack": "^5.51.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.5",
     "@danbruegge/gatsby-plugin-stylelint": "^4.0.0",
-    "babel-preset-gatsby": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-webpack-plugin": "^3.1.1",
@@ -72,7 +72,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-webpack-plugin": "^3.0.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.5.4"
   },
   "homepage": "",
   "keywords": [],

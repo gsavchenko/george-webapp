@@ -1,5 +1,6 @@
 {
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect" // detect react version
@@ -12,16 +13,15 @@
   },
   "extends": [
     "eslint:recommended", // use recommended configs
-    "plugin:react/recommended",
+    "plugin:react/recommended"
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended-requiring-type-checking"
     // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
     "graphql": true
   },
   "rules": {
-    "no-anonymous-exports-page-templates": "warn",
-    "limited-exports-page-templates": "warn",
-    "no-undef": "off",
     "no-unused-vars": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
@@ -34,9 +34,9 @@
     "ecmaFeatures": {
       "jsx": true
     },
+    "project": ["./tsconfig.json"],
     "babelOptions": {
       "presets": [
-        "babel-preset-gatsby",
         "@babel/preset-typescript"
       ]
     }
