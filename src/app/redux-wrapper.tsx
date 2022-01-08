@@ -7,6 +7,7 @@ interface ProviderProps {
   children: ReactNode
 }
 
+// eslint-disable-next-line no-undef
 export default (props: ProviderProps): JSX.Element => {
   const { children } = props;
 

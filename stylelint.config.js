@@ -6,6 +6,6 @@ module.exports = {
     'declaration-block-single-line-max-declarations': null,
     'selector-descendant-combinator-no-non-space': null,
     'declaration-block-trailing-semicolon': null,
-    'at-rule-no-unknown': null
-  }
-};
+    'at-rule-no-unknown': null,
+  },
+}

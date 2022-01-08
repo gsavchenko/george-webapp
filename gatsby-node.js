@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const _ = require('lodash')
+const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then((result) => {
+      ).then(result => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
