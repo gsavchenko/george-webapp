@@ -1,7 +1,8 @@
-import { MdClose, MdMenu } from 'react-icons/md';
-import { MenuButtonProps } from '../store/menu-button.types';
-import { IconButton } from '../../../../features/icon';
 import React from 'react';
+import { MdClose, MdMenu } from 'react-icons/md';
+
+import { IconButton } from '../../../../features/icon';
+import { MenuButtonProps } from '../store/menu-button.types';
 
 const MenuButton: React.FC<MenuButtonProps> = (props) => {
   const { toggled, onClick, turnOff, turnOn } = props;
