@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import contactData from '../data/contact';
+// import contactData from '../data/contact';
 
 class Contact extends React.Component {
   render() {
