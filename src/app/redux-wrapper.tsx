@@ -3,17 +3,14 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './store';
 
-interface ProviderProps {
-  children: ReactNode
+interface ReduxWrapperProps {
+  element: ReactNode
 }
 
-// eslint-disable-next-line no-undef
-export default (props: ProviderProps): JSX.Element => {
-  const { children } = props;
+const reduxWrapper = ({ element }: ReduxWrapperProps) => (
+  <Provider store={createStore(rootReducer)}>
+    {element}
+  </Provider>
+);
 
-  return (
-    <Provider store={createStore(rootReducer)}>
-      {children}
-    </Provider>
-  )
-}
+export default reduxWrapper;
