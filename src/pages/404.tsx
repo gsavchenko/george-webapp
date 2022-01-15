@@ -16,7 +16,7 @@ const NotFoundPage:React.FC<INotFoundPageProps> = () => (
     }}
     >
       <iframe
-        title="seinfeld"
+        title="seinfeld 404"
         src="https://giphy.com/embed/OK27wINdQS5YQ"
         width="100%"
         height="100%"

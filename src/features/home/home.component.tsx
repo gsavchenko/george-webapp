@@ -26,7 +26,7 @@ const Home: React.FC = () => {
 
 export default Home;
 
-export const query = (): void => useStaticQuery(graphql`
+export const useQuery = () => useStaticQuery(graphql`
   query {
     site {
       siteMetadata {
