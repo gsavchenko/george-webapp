@@ -12,6 +12,7 @@ class NotFoundPage extends React.Component<INotFoundPageProps, {}> {
         <p>You just hit a route that doesn&#39;t exist....</p>
         <div style={{width: '100%', height: 0, paddingBottom: '70%', position: 'relative'}}>
         <iframe
+          title="seinfeld 404"
           src='https://giphy.com/embed/OK27wINdQS5YQ'
           width='100%'
           height='100%'
