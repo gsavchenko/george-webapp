@@ -31,7 +31,7 @@ export class View extends Component<IViewProps, IViewState> {
         </Helmet>
         <Link to='/portfolio'>&larr; back</Link>
         <h2>{title}</h2>
-        <img src={image} />
+        <img src={image} alt='profile'/>
         <div>
           {description}
           <br /> <br />

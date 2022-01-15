@@ -8,7 +8,6 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import LightboxImage from '../common/components/LightboxImage';
 
 class Journey extends React.Component {
   render() {

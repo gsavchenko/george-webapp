@@ -26,7 +26,7 @@ class Home extends React.Component {
 
 export default Home;
 
-export const query = () => useStaticQuery(graphql`
+export const useQuery = () => useStaticQuery(graphql`
   query {
     site {
       siteMetadata {
