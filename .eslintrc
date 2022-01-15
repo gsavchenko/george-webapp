@@ -13,10 +13,9 @@
   },
   "extends": [
     "eslint:recommended", // use recommended configs
-    "plugin:react/recommended"
+    "eslint-config-react-app"
     // "plugin:@typescript-eslint/recommended",
     // "plugin:@typescript-eslint/recommended-requiring-type-checking"
-    // "eslint-config-react-app" TODO: deal with these errors
   ],
   "globals": {
     "graphql": true
@@ -36,9 +35,7 @@
     },
     "project": ["./tsconfig.json"],
     "babelOptions": {
-      "presets": [
-        "@babel/preset-typescript"
-      ]
+      "presets": ["@babel/preset-typescript"]
     }
   }
 }
