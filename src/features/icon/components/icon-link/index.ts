@@ -1,1 +1,1 @@
-export { default as IconLink } from './icon-link.component';
+export { default as IconLink } from './icon-link'
