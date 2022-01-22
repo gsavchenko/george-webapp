@@ -1,8 +1,12 @@
-import { IconButtonProps } from '../../store'
+import { IconProps } from '../icon'
 import React from 'react'
 import { isNil } from 'ramda'
 
 import './icon-button.css'
+
+interface IconButtonProps extends IconProps {
+  onClick?: () => void
+}
 
 const IconButton = (props: IconButtonProps) => {
   const { icon, onClick } = props
