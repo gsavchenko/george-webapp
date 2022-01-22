@@ -1,7 +1,11 @@
-import { IconLinkProps } from '../../store'
+import { IconProps } from '../icon'
 import React from 'react'
 
 import './icon-link.css'
+
+interface IconLinkProps extends IconProps {
+  href: string
+}
 
 const IconLink = (props: IconLinkProps) => {
   const { icon, href } = props
