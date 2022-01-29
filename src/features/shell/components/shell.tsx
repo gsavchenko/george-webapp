@@ -6,7 +6,7 @@ import { HeaderContainer } from '../containers'
 import { Footer } from './footer'
 import { ShellProps } from '../store'
 
-import './shell.component.css'
+import './shell.css'
 
 const Shell = (props: ShellProps) => {
   const { children } = props
