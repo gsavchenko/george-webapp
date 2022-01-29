@@ -1,5 +1,6 @@
+import classnames from 'classnames'
 import React from 'react'
-import classnames from 'classnames/'
+import { useSelector } from 'react-redux'
 
 import { RootState } from '../../../app/store'
 import { HeaderContainer } from '../containers'
@@ -10,7 +11,7 @@ import './shell.css'
 
 const Shell = (props: ShellProps) => {
   const { children } = props
-  const menuToggled = (state: RootState) => state.menu.toggled
+  const menuToggled = useSelector((state: RootState) => state.menu.toggled)
 
   return (
     <div className={classnames('container', { 'sidenav-open': menuToggled })}>
