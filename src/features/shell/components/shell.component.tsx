@@ -1,24 +1,26 @@
-import { HeaderContainer } from '../containers';
-import { ShellProps } from '../store';
-import { Footer } from './footer';
-import React from 'react';
-import classnames from 'classnames/bind';
-import * as styles from './shell.component.css';
+import React from 'react'
+import classnames from 'classnames/'
 
-const cx = classnames.bind(styles);
+import { RootState } from '../../../app/store'
+import { HeaderContainer } from '../containers'
+import { Footer } from './footer'
+import { ShellProps } from '../store'
 
-class Shell extends React.Component<ShellProps, {}> {
-  render() {
-    return (
-      <div className={cx('container', { 'sidenav-open' : this.props.menuToggled })}>
-        <HeaderContainer></HeaderContainer>
-        <div className={cx('body', { 'sidenav-open' : this.props.menuToggled })}>
-          {this.props.children}
-        </div>
-        <Footer></Footer>
+import './shell.component.css'
+
+const Shell = (props: ShellProps) => {
+  const { children } = props
+  const menuToggled = (state: RootState) => state.menu.toggled
+
+  return (
+    <div className={classnames('container', { 'sidenav-open': menuToggled })}>
+      <HeaderContainer></HeaderContainer>
+      <div className={classnames('body', { 'sidenav-open': menuToggled })}>
+        {children}
       </div>
-    );
-  }
+      <Footer></Footer>
+    </div>
+  )
 }
 
-export default Shell;
+export default Shell
