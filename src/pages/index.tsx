@@ -1,15 +1,15 @@
-import React from 'react';
-import { Home } from '../features/home';
-import { ShellContainer } from '../features/shell';
+import React from 'react'
+import { Home } from '../features/home'
+import { Shell } from '../features/shell'
 
 class SiteIndex extends React.Component {
   render() {
     return (
-      <ShellContainer>
+      <Shell>
         <Home />
-      </ShellContainer>
-    );
+      </Shell>
+    )
   }
 }
 
-export default SiteIndex;
+export default SiteIndex
