@@ -95,13 +95,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "@danbruegge/gatsby-plugin-stylelint",
-      options: {
-        files: ["**/*.{ts,tsx}"],
-        configFile: './stylelint.config.js'
-      }
-    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-ramda`,
     `gatsby-plugin-postcss`

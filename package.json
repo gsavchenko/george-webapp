@@ -60,7 +60,6 @@
     "webpack": "^5.51.1"
   },
   "devDependencies": {
-    "@danbruegge/gatsby-plugin-stylelint": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
@@ -70,9 +69,6 @@
     "gh-pages": "^3.2.3",
     "precss": "^4.0.0",
     "prettier": "^2.3.2",
-    "stylelint": "13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-webpack-plugin": "^3.0.1",
     "typescript": "^4.5.4"
   },
   "homepage": "",
