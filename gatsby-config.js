@@ -97,7 +97,6 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-ramda`,
-    `gatsby-plugin-postcss`
   ],
 }
     
