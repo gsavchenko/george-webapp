@@ -1,10 +1,6 @@
 import React from 'react'
 
-interface NotFoundPageProps {
-  location: string
-}
-
-const NotFoundPage = (props: NotFoundPageProps) => {
+const NotFoundPage = () => {
   return (
     <div>
       <h1>Not Found</h1>
