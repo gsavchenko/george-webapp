@@ -1,16 +1,16 @@
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
+// import get from 'lodash/get';
 import React from 'react';
 
 // import portfolioData from '../../data/portfolio';
 
 class PortfolioIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description',
-    );
+    // const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    // const siteDescription = get(
+    //   this,
+    //   'props.data.site.siteMetadata.description',
+    // );
 
     return (
       <div>

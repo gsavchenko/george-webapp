@@ -1,7 +1,7 @@
 import { AnimatedDescription } from './animated-description';
 import { graphql, useStaticQuery } from 'gatsby';
 import classnames from 'classnames/bind';
-import get from 'lodash/get';
+// import get from 'lodash/get';
 import React from 'react';
 import * as styles from './home.component.css';
 import { AnimatedBackground } from '../../common/components/animated-background';
