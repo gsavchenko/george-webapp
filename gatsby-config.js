@@ -43,7 +43,6 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          // 'gatsby-plugin-typescript-checker',
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
@@ -65,13 +64,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: { feeds: [] }
+    },
     {
       resolve:`gatsby-plugin-manifest`,
       options: { icons: [] }
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-redux`,
       options: {
@@ -87,7 +88,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-ramda`,
     `gatsby-plugin-emotion`
   ],

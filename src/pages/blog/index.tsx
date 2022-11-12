@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 
 interface BlogIndexProps {
   location: string
@@ -9,17 +9,17 @@ interface BlogIndexProps {
 
 const BlogIndex = (props: BlogIndexProps) => {
   const siteTitle = get(props, 'props.data.site.siteMetadata.title')
-  const siteDescription = get(props, 'props.data.site.siteMetadata.description')
+  // const siteDescription = get(props, 'props.data.site.siteMetadata.description')
   // const posts = get(props, 'props.data.allMarkdownRemark.edges')
   // const title = get(node, 'frontmatter.title') || node.frontmatter.path;
 
   return (
     <div title={siteTitle}>
-      <Helmet
+      {/* <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
         title={`Blog | ${siteTitle}`}
-      />
+      /> */}
       <h2>Blog</h2>
       {/* {posts !== undefined && (
         <div key={posts[0].node.frontmatter.path}>
