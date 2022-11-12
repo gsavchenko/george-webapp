@@ -11,24 +11,21 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(
         `
-          {
-            allMarkdownRemark(
-              sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    path
-                  }
+        {
+          allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1000) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  path
                 }
               }
             }
           }
+        }
         `
       ).then(result => {
         if (result.errors) {
