@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
-import Helmet from 'react-helmet';
 
 // import portfolioData from '../../data/portfolio';
 
@@ -15,11 +14,11 @@ class PortfolioIndex extends React.Component {
 
     return (
       <div>
-        <Helmet
+        {/* <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`Portfolio | ${siteTitle}`}
-        />
+        /> */}
         <h2>Portfolio</h2>
         <br />
       </div>

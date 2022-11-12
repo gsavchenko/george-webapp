@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import './vertical-layout.css'
 
 interface VerticalLayoutProps {
-  top: object
-  bottom: object
+  top: ReactNode
+  bottom: ReactNode
 }
 
 const VerticalLayout = (props: VerticalLayoutProps) => {
