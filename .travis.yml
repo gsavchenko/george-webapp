@@ -1,7 +1,7 @@
 language: node_js
 os: linux
-dist: xenial
-node_js: 17
+dist: focal
+node_js: 18
 script:
 - npm install -g gatsby-cli
 - yarn install
