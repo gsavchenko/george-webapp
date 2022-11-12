@@ -1,4 +1,4 @@
-@import 'variables';
+/* @import 'variables'; */
 
 .sidenav {
   height: 100%;
@@ -10,8 +10,8 @@
   overflow-x: hidden;
   transition: 0.5s;
   white-space: nowrap;
-  background: var(--secondary);
-  background: linear-gradient(to right, var(--secondary) 2%, var(--secondary-compliment) 100%);
+  /* background: var(--secondary); */
+  /* background: linear-gradient(to right, var(--secondary) 2%, var(--secondary-compliment) 100%); */
 
   &.sidenav-open {
     width: 300px;
@@ -52,7 +52,7 @@
   padding-top: 30px;
 
   #menu-content {
-    @add-mixin secondary-font;
+    /* @add-mixin secondary-font; */
 
     padding-top: 30px;
     text-align: center;

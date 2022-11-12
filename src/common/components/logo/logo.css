@@ -1,7 +1,7 @@
-@import "variables";
+/* @import "variables"; */
 
 #logo {
-  fill: var(--secondary);
+  /* fill: var(--secondary); */
 
   &.light {
     fill: white;
@@ -19,9 +19,9 @@ label.author {
   }
 
   span#name {
-    @add-mixin secondary-font;
+    /* @add-mixin secondary-font; */
 
-    color: var(--primary-inverse);
+    /* color: var(--primary-inverse); */
     font-size: 15px;
   }
 
