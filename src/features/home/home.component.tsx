@@ -5,6 +5,7 @@ import classnames from 'classnames/bind';
 import React from 'react';
 import * as styles from './home.component.css';
 import { AnimatedBackground } from '../../common/components/animated-background';
+import Layout from '../../components/layout/layout';
 
 classnames.bind(styles);
 
@@ -15,6 +16,7 @@ class Home extends React.Component {
 
     return (
       <div>
+        <Layout>Hello world!</Layout>
         <AnimatedDescription />
         <AnimatedBackground />
       </div>
