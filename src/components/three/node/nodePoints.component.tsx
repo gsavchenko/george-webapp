@@ -1,6 +1,7 @@
 import React, { useMemo, useRef } from 'react';
 import { ThreeElements, useThree, useFrame } from '@react-three/fiber';
 import { useNodePoints, useNodePointShaders } from './hooks';
+import { Points } from 'three';
 
 export const NodePoints: React.FC<ThreeElements['mesh']> = (props) => {
   // setup material
@@ -21,12 +22,12 @@ export const NodePoints: React.FC<ThreeElements['mesh']> = (props) => {
     []
   );
 
-  const [particlePositions, particleVelocities] = useNodePoints(80);
-
   // This reference gives us direct access to our points
   const NUM_POINTS = 80;
-  const pointsRef = useRef(null);
+  const pointsRef = useRef(null); // TODO: Add Points type to ref
   const camera = useThree((state) => state.viewport);
+
+  const [particlePositions, particleVelocities] = useNodePoints(80, pointsRef);
 
   const height = camera.height;
   const width = height * camera.aspect;

@@ -1,7 +1,11 @@
-import { useThree } from "@react-three/fiber";
-import { useMemo } from "react";
+import { useThree } from '@react-three/fiber';
+import { RefObject, useCallback, useMemo } from 'react';
+import { Points } from 'three';
 
-export const useNodePoints = (totalPoints: number): [Float32Array, Float32Array] => {
+export const useNodePoints = (
+  totalPoints: number,
+  pointsRef: RefObject<Points>
+): [Float32Array, Float32Array, () => void] => {
   const camera = useThree((state) => state.viewport);
 
   const TOTAL_POINTS = totalPoints;
@@ -40,6 +44,28 @@ export const useNodePoints = (totalPoints: number): [Float32Array, Float32Array]
     return velocities;
   }, [TOTAL_POINTS]);
 
+  const updatePositions = () =>
+    useCallback(() => {
+      for (let i = 0; i < TOTAL_POINTS; i++) {
+        const i3 = i * 3;
 
-  return [particlePosition, particleVelocities]
-}
+        const positionX =
+          pointsRef.current.geometry.attributes.position.array[i3];
+        const updatedPositionX = positionX + particleVelocities[i3];
+        const positionY =
+          pointsRef.current.geometry.attributes.position.array[i3 + 1];
+        const updatedPositionY = positionY + particleVelocities[i3 + 1];
+
+        pointsRef.current.geometry.attributes.position.setX(
+          i3,
+          updatedPositionX
+        );
+        pointsRef.current.geometry.attributes.position.setY(
+          i3 + 1,
+          updatedPositionY
+        );
+      }
+    }, []);
+
+  return [particlePosition, particleVelocities, updatePositions];
+};
