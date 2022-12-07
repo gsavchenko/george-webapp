@@ -27,7 +27,8 @@ export const NodePoints: React.FC<ThreeElements['mesh']> = (props) => {
   const pointsRef = useRef(null); // TODO: Add Points type to ref
   const camera = useThree((state) => state.viewport);
 
-  const [particlePositions, particleVelocities] = useNodePoints(80, pointsRef);
+  const [particlePositions, particleVelocities, updatePositions] =
+    useNodePoints(80, pointsRef);
 
   const height = camera.height;
   const width = height * camera.aspect;
@@ -36,10 +37,12 @@ export const NodePoints: React.FC<ThreeElements['mesh']> = (props) => {
     for (let i = 0; i < NUM_POINTS; i++) {
       const i3 = i * 3;
 
-      pointsRef.current.geometry.attributes.position.array[i3] +=
-        particleVelocities[i3];
-      pointsRef.current.geometry.attributes.position.array[i3 + 1] +=
-        particleVelocities[i3 + 1];
+      // pointsRef.current.geometry.attributes.position.array[i3] +=
+      //   particleVelocities[i3];
+      // pointsRef.current.geometry.attributes.position.array[i3 + 1] +=
+      //   particleVelocities[i3 + 1];
+
+      // updatePositions();
 
       // right
       if (

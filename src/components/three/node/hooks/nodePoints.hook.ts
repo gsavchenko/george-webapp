@@ -44,28 +44,24 @@ export const useNodePoints = (
     return velocities;
   }, [TOTAL_POINTS]);
 
-  const updatePositions = () =>
-    useCallback(() => {
-      for (let i = 0; i < TOTAL_POINTS; i++) {
-        const i3 = i * 3;
+  const updatePositions = useCallback(() => {
+    for (let i = 0; i < TOTAL_POINTS; i++) {
+      const i3 = i * 3;
 
-        const positionX =
-          pointsRef.current.geometry.attributes.position.array[i3];
-        const updatedPositionX = positionX + particleVelocities[i3];
-        const positionY =
-          pointsRef.current.geometry.attributes.position.array[i3 + 1];
-        const updatedPositionY = positionY + particleVelocities[i3 + 1];
+      const positionX =
+        pointsRef.current.geometry.attributes.position.array[i3];
+      const updatedPositionX = positionX + particleVelocities[i3];
+      const positionY =
+        pointsRef.current.geometry.attributes.position.array[i3 + 1];
+      const updatedPositionY = positionY + particleVelocities[i3 + 1];
 
-        pointsRef.current.geometry.attributes.position.setX(
-          i3,
-          updatedPositionX
-        );
-        pointsRef.current.geometry.attributes.position.setY(
-          i3 + 1,
-          updatedPositionY
-        );
-      }
-    }, []);
+      pointsRef.current.geometry.attributes.position.setX(i3, updatedPositionX);
+      pointsRef.current.geometry.attributes.position.setY(
+        i3 + 1,
+        updatedPositionY
+      );
+    }
+  }, []);
 
   return [particlePosition, particleVelocities, updatePositions];
 };
