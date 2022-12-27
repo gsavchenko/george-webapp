@@ -4,7 +4,6 @@ import React from 'react';
 import { AnimatedBackground } from '../../common/components/animated-background';
 import Layout from '../../components/layout/layout';
 import { Canvas } from '@react-three/fiber';
-import { useTheme } from '@emotion/react';
 import { OrbitControls } from '@react-three/drei';
 import { Nodes } from '../../components/three/nodes';
 import styled from '@emotion/styled';
@@ -16,22 +15,15 @@ const CanvasBackground = styled.div((props) => ({
   position: 'fixed',
   top: '0',
   left: '0',
-  border: 'thick double #32a1ce',
   backgroundColor: props.theme.colors.primary,
   zIndex: '-1',
 }));
 
 const Home: React.FC = () => {
-  const theme = useTheme();
   const enableOrbitControls = false;
 
   return (
-    <div
-      style={{
-        width: '50vw',
-        height: '50vh',
-      }}
-    >
+    <div>
       <Layout>Hello world!</Layout>
       <AnimatedDescription />
       <AnimatedBackground />

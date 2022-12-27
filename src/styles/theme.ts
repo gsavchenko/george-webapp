@@ -1,4 +1,4 @@
-import { Theme } from "@emotion/react";
+import { Theme } from '@emotion/react';
 
 enum colors {
   LightSkyBlue = '#9de1f6',
@@ -6,16 +6,18 @@ enum colors {
   PersianBlue = '#232ed1',
   Cyprus = '#101d42',
   BlackPearl = '#0d1317',
-  LuckyPoint = '#2e294e'
+  LuckyPoint = '#2e294e',
 }
 
 export const theme: Theme = {
   colors: {
     primary: colors.LightSkyBlue,
+    secondary: colors.SlateBlue,
+    primaryInverse: colors.BlackPearl,
     positive: '',
-    negative: ''
-  } 
-}
+    negative: '',
+  },
+};
 
 // * {
 //   /* Coolors Exported Palette - https://coolors.co/9de1f6-6564db-232ed1-101d42-0d1317-2e294e */
