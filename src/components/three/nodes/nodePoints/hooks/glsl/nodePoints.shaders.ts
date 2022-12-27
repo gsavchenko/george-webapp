@@ -20,7 +20,7 @@ export const useNodePointShaders = (): [string, string] => {
       vec4 mvPosition = viewMatrix * modelMatrix * vec4(position, 1.0);
     
       gl_Position = projectionMatrix * mvPosition;
-      gl_PointSize = 15.0 + size;
+      gl_PointSize = 5.0 + size;
     }
   `;
 

@@ -51,9 +51,10 @@ export const useNodePoints = (
 
   const nodePointSizes = useMemo(() => {
     const sizes = new Float32Array(TOTAL_POINTS * 3);
-    const getRandomSize = () => Math.random() * (10 - -0.005) + -0.005;
+    const getRandomSize = () => Math.random() * (5 - -1) + -1;
 
     for (let i = 0; i < TOTAL_POINTS; i++) {
+      // console.log(getRandomSize());
       // We add the 3 values to the attribute array for every loop
       sizes.set([getRandomSize()], i);
     }

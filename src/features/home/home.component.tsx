@@ -30,7 +30,6 @@ const Home: React.FC = () => {
       style={{
         width: '50vw',
         height: '50vh',
-        backgroundColor: theme.colors.primary,
       }}
     >
       <Layout>Hello world!</Layout>
