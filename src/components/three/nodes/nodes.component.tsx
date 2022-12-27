@@ -9,7 +9,8 @@ export const Nodes = (): JSX.Element => {
   const pointsRef = useRef<Points>(null);
   const linesRef = useRef<LineSegments>(null);
 
-  const [pointPositions, updatePoints] = useNodePoints(80, pointsRef);
+  const { nodePointPositions, nodePointSizes, updateNodePoints } =
+    useNodePoints(80, pointsRef);
   const [linePositions, lineOpacities, updateLines] = useNodeLines(
     400,
     linesRef,
@@ -17,13 +18,17 @@ export const Nodes = (): JSX.Element => {
   );
 
   useFrame((state) => {
-    updatePoints();
+    updateNodePoints();
     updateLines();
   });
 
   return (
     <>
-      <NodePoints pointsRef={pointsRef} pointPositions={pointPositions} />
+      <NodePoints
+        pointsRef={pointsRef}
+        pointPositions={nodePointPositions}
+        pointSizes={nodePointSizes}
+      />
       <NodeLines
         linesRef={linesRef}
         lineOpacities={lineOpacities}

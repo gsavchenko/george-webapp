@@ -5,7 +5,11 @@ import { Points, Vector3 } from 'three';
 export const useNodePoints = (
   totalPoints: number,
   pointsRef: RefObject<Points>
-): [Float32Array, () => void] => {
+): {
+  nodePointPositions: Float32Array;
+  nodePointSizes: Float32Array;
+  updateNodePoints: () => void;
+} => {
   // TODO: extract this camera logic into a single hook
   const camera = useThree((state) => state.viewport);
 
@@ -15,7 +19,7 @@ export const useNodePoints = (
 
   // create the initial point positions
   // each point has 1 vector made up of 3 points
-  const particlePosition = useMemo(() => {
+  const nodePointPositions = useMemo(() => {
     const positions = new Float32Array(TOTAL_POINTS * 3);
     const position = new Vector3();
     const getRandomPointOnScreen = () => Math.random() * WIDTH - WIDTH / 2;
@@ -45,9 +49,33 @@ export const useNodePoints = (
     return velocities;
   }, [TOTAL_POINTS]);
 
-  const updateNodes = useCallback(() => {
+  const nodePointSizes = useMemo(() => {
+    const sizes = new Float32Array(TOTAL_POINTS * 3);
+    const getRandomSize = () => Math.random() * (10 - -0.005) + -0.005;
+
+    for (let i = 0; i < TOTAL_POINTS; i++) {
+      // We add the 3 values to the attribute array for every loop
+      sizes.set([getRandomSize()], i);
+    }
+
+    return sizes;
+  }, [TOTAL_POINTS]);
+
+  const updateNodePoints = useCallback(() => {
     const currentPosition = new Vector3();
     const updatedPosition = new Vector3();
+    const OUTER_BOUNDING_BOX = {
+      top: 2,
+      bottom: 2,
+      left: 2,
+      right: 2,
+    };
+    const INNER_BOUNDING_BOX = {
+      top: 1,
+      bottom: 1,
+      left: 1,
+      right: 1,
+    };
 
     // accelerate nodes at a constant rate
     for (let i = 0; i < TOTAL_POINTS; i++) {
@@ -72,29 +100,28 @@ export const useNodePoints = (
     }
 
     // detect when a node goes off screen and update the position
+    // assuming 0,0 is the centre of the screen and box
     for (let i = 0; i < TOTAL_POINTS; i++) {
-      // const i3 = i * 3;
-
       // right
       if (
         pointsRef.current.geometry.attributes.position.getX(i) >
-        WIDTH / 2 + 2
+        WIDTH / 2 + OUTER_BOUNDING_BOX.right
       ) {
         pointsRef.current.geometry.attributes.position.setXYZ(
           i,
-          -WIDTH / 2 - 1,
+          -WIDTH / 2 - INNER_BOUNDING_BOX.left,
           Math.random() * HEIGHT - HEIGHT / 2,
           0
         );
       }
       // left
       if (
-        pointsRef.current.geometry.attributes.position.getX[i] <
-        -WIDTH / 2 - 2
+        pointsRef.current.geometry.attributes.position.getX(i) <
+        -WIDTH / 2 - OUTER_BOUNDING_BOX.left
       ) {
         pointsRef.current.geometry.attributes.position.setXYZ(
           i,
-          WIDTH / 2 + 1,
+          WIDTH / 2 + OUTER_BOUNDING_BOX.right,
           Math.random() * HEIGHT - HEIGHT / 2,
           0
         );
@@ -102,24 +129,24 @@ export const useNodePoints = (
       // top
       if (
         pointsRef.current.geometry.attributes.position.getY(i) >
-        HEIGHT / 2 + 2
+        HEIGHT / 2 + OUTER_BOUNDING_BOX.top
       ) {
         pointsRef.current.geometry.attributes.position.setXYZ(
           i,
           Math.random() * WIDTH - WIDTH / 2,
-          -HEIGHT / 2 - 1,
+          -HEIGHT / 2 - INNER_BOUNDING_BOX.bottom,
           0
         );
       }
       // bottom
       if (
         pointsRef.current.geometry.attributes.position.getY(i) <
-        -HEIGHT / 2 - 2
+        -HEIGHT / 2 - OUTER_BOUNDING_BOX.bottom
       ) {
         pointsRef.current.geometry.attributes.position.setXYZ(
           i,
           Math.random() * WIDTH - WIDTH / 2,
-          HEIGHT / 2 + 1,
+          HEIGHT / 2 + INNER_BOUNDING_BOX.top,
           0
         );
       }
@@ -128,5 +155,5 @@ export const useNodePoints = (
     }
   }, []);
 
-  return [particlePosition, updateNodes];
+  return { nodePointPositions, nodePointSizes, updateNodePoints };
 };

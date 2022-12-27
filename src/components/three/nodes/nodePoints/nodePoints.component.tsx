@@ -8,13 +8,15 @@ import {
 } from '../../common';
 
 interface NodePointsProps {
-  pointPositions: Float32Array;
   pointsRef: RefObject<Points>;
+  pointPositions: Float32Array;
+  pointSizes: Float32Array;
 }
 
 export const NodePoints = ({
-  pointPositions,
   pointsRef,
+  pointPositions,
+  pointSizes,
 }: NodePointsProps): JSX.Element => {
   const [pointVertexShader, pointFragmentShader] = useNodePointShaders();
 
@@ -28,6 +30,11 @@ export const NodePoints = ({
             attach="attributes-position"
             array={pointPositions}
             itemSize={3}
+          />
+          <BufferAttribute
+            attach="attributes-size"
+            array={pointSizes}
+            itemSize={1}
           />
         </BufferGeometry>
         <RawShaderMaterial

@@ -1,55 +1,51 @@
 import { AnimatedDescription } from './animated-description';
 import { graphql, useStaticQuery } from 'gatsby';
-import classnames from 'classnames/bind';
-// import get from 'lodash/get';
 import React from 'react';
-import * as styles from './home.component.css';
 import { AnimatedBackground } from '../../common/components/animated-background';
 import Layout from '../../components/layout/layout';
-import { Canvas, useThree } from '@react-three/fiber';
-import { Box } from '../../components/three/box.component';
-import { NodePoints } from '../../components/three/nodes/nodePoints/nodePoints.component';
+import { Canvas } from '@react-three/fiber';
 import { useTheme } from '@emotion/react';
-import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Nodes } from '../../components/three/nodes';
+import styled from '@emotion/styled';
 
-classnames.bind(styles);
+const CanvasBackground = styled.div((props) => ({
+  width: '100%',
+  height: '100%',
+  display: 'block',
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  border: 'thick double #32a1ce',
+  backgroundColor: props.theme.colors.primary,
+  zIndex: '-1',
+}));
 
 const Home: React.FC = () => {
   const theme = useTheme();
+  const enableOrbitControls = false;
 
   return (
     <div
       style={{
         width: '50vw',
         height: '50vh',
+        backgroundColor: theme.colors.primary,
       }}
     >
       <Layout>Hello world!</Layout>
       <AnimatedDescription />
       <AnimatedBackground />
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'block',
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          border: 'thick double #32a1ce',
-        }}
-      >
+      <CanvasBackground>
         <Canvas>
           <>
-            <OrbitControls makeDefault />
+            {enableOrbitControls && <OrbitControls makeDefault />}
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <Box position={[-1.2, 0, 0]} />
-            <Box position={[1.2, 0, 0]} />
             <Nodes />
           </>
         </Canvas>
-      </div>
+      </CanvasBackground>
     </div>
   );
 };

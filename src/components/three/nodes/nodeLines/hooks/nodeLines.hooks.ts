@@ -12,7 +12,6 @@ export const useNodeLines = (
 
   const TOTAL_LINES = totalLines;
   const HEIGHT = camera.height;
-  const WIDTH = HEIGHT * camera.aspect;
 
   const R = new Vector2();
   const nodeOne = new Vector3();
@@ -32,12 +31,8 @@ export const useNodeLines = (
     const positions = new Float32Array(TOTAL_LINES * 3 * 2);
     const linePointOne = new Vector3();
     const linePointTwo = new Vector3();
-    const getRandomPointOnScreen = () => Math.random() * WIDTH - WIDTH / 2;
 
     for (let i = 0; i < TOTAL_LINES; i++) {
-      // linePointOne.set(getRandomPointOnScreen(), getRandomPointOnScreen(), 0);
-      // linePointTwo.set(getRandomPointOnScreen(), getRandomPointOnScreen(), 0);
-
       linePointOne.set(0, 0, 0);
       linePointTwo.set(0, 0, 0);
 
@@ -57,19 +52,15 @@ export const useNodeLines = (
     return positions;
   }, [TOTAL_LINES]);
 
-  // create the initial line positions
-  // each line has 2 vectors made up of a single opacity
+  // each lines has a single opacity vector representing the opacity on
+  // either end of the line. 0 is transparent 1 is opaque.
   const lineOpacities = useMemo(() => {
     const opacities = new Float32Array(TOTAL_LINES * 2);
     const opacity = new Vector2();
-    // const getRandomPointOnScreen = () => Math.random() * WIDTH - WIDTH / 2;
+    const TRANSPARENT = 0;
 
     for (let i = 0; i < TOTAL_LINES; i++) {
-      // linePointOne.set(getRandomPointOnScreen(), getRandomPointOnScreen(), 0);
-      // linePointTwo.set(getRandomPointOnScreen(), getRandomPointOnScreen(), 0);
-
-      opacity.set(0, 0);
-
+      opacity.set(TRANSPARENT, TRANSPARENT);
       opacities.set([opacity.x, opacity.y], i * 2);
     }
 
@@ -112,18 +103,15 @@ export const useNodeLines = (
           );
           linesRef.current.geometry.attributes.opacity.setXY(
             lineIndex * 2,
-            1.1 - distance,
-            1.1 - distance
+            1.25 - distance,
+            1.25 - distance
           );
-          // linesRef.current.geometry.attributes.opacity.setXY(
-          //   lineIndex * 2 + 1,
-          //   6 - distance,
-          //   6 - distance
-          // );
           lineIndex++;
         }
       }
     }
+
+    // hide lines that are not invisible and not connected to any node points
     for (
       let k = (lineIndex + 1) * 2;
       k < linesRef.current.geometry.attributes.position.count;
@@ -131,6 +119,7 @@ export const useNodeLines = (
     ) {
       linesRef.current.geometry.attributes.position.setXYZ(k, 0, 0, 0);
     }
+
     linesRef.current.geometry.attributes.position.needsUpdate = true;
     linesRef.current.geometry.attributes.opacity.needsUpdate = true;
   }, []);
