@@ -6,9 +6,7 @@ import { theme } from '../styles/theme';
 
 const SiteIndex = (): JSX.Element => (
   <ThemeProvider theme={theme}>
-    <Shell>
-      <Home />
-    </Shell>
+    <Home />
   </ThemeProvider>
 );
 

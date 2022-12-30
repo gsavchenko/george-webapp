@@ -7,6 +7,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Nodes } from '../../components/three/nodes';
 import styled from '@emotion/styled';
+import { HeaderContainer } from '../shell';
 
 const CanvasBackground = styled.div((props) => ({
   width: '100%',
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <HeaderContainer></HeaderContainer>
       <Layout>Hello world!</Layout>
       <AnimatedDescription />
       <AnimatedBackground />
