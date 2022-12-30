@@ -12,6 +12,7 @@ const CircleButton = styled.button((props) => ({
   backgroundColor: '#a9a9a9',
   borderRadius: '50%',
   border: 'none',
+  transition: 'all 0.25s ease-in-out',
 
   ':hover': {
     transition: 'all 0.25s ease-in-out',
