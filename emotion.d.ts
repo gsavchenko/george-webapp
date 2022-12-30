@@ -6,8 +6,13 @@ declare module '@emotion/react' {
       primary: string;
       secondary: string;
       primaryInverse: string;
+      secondaryCompliment: string;
       positive: string;
       negative: string;
+    };
+    fonts: {
+      primary: string;
+      secondary: string;
     };
   }
 }

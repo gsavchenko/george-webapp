@@ -1,37 +1,55 @@
-import { MenuButtonContainer, MenuContainer } from '../../../../common/components';
-import { HeaderState, HeaderProps } from '../../store';
+import { Sidebar, useSidebar } from '../../../../common/components';
 import { Logo } from '../../../../common/components/logo';
-import React from 'react';
-import * as styles from './header.component.css';
-import classnames from 'classnames/bind';
-import equals from 'ramda/src/equals';
+import React, { useCallback } from 'react';
+import styled from '@emotion/styled';
+import { MdClose, MdMenu } from 'react-icons/md';
+import { IconButton } from '../../../icon';
 
-const cx = classnames.bind(styles);
+type SidebarProps = {
+  isOpen: boolean;
+};
 
-class Header extends React.Component <HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
+const ButtonContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+  top: '20px',
+  left: '20px',
+  position: 'fixed',
+  transition: '0.5s',
+  zIndex: '10',
+  transitionTimingFunction: 'ease-out',
+  paddingLeft: isOpen ? '300px' : '0',
 
-    this._toggleMenu = this._toggleMenu.bind(this);
-  }
+  '@media screen and (max-width: 370px)': {
+    paddingLeft: '0px',
+  },
+}));
 
-  render() {
-    return (
-      <div className={cx('header', { 'sidenav-open' : this.props.menuToggled })}>
-        <div className={cx('button-container')}>
-          <MenuButtonContainer onClick={this._toggleMenu} />
-        </div>
-        <Logo />
-        <MenuContainer />
-      </div>
-    );
-  }
+const HeaderContainer = styled.div<SidebarProps>({
+  padding: '20px',
+  transition: '0.45s',
+});
 
-  private _toggleMenu(): void {
-    equals(this.props.menuToggled, false)
-    ? this.props.openMenu()
-    : this.props.closeMenu();
-  }
-}
+export const Header = (): JSX.Element => {
+  const icon = {
+    open: MdMenu,
+    closed: MdClose,
+  };
 
-export default Header;
+  const { isOpen, openSidebar, closeSidebar } = useSidebar();
+
+  const handleToggle = useCallback(() => {
+    isOpen ? closeSidebar() : openSidebar();
+  }, [isOpen]);
+
+  return (
+    <HeaderContainer isOpen={isOpen}>
+      <ButtonContainer isOpen={isOpen}>
+        <IconButton
+          icon={isOpen ? icon.closed : icon.open}
+          onClick={handleToggle}
+        />
+      </ButtonContainer>
+      <Logo />
+      <Sidebar isOpen={isOpen} />
+    </HeaderContainer>
+  );
+};

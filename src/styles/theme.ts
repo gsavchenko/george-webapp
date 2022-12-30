@@ -14,8 +14,13 @@ export const theme: Theme = {
     primary: colors.LightSkyBlue,
     secondary: colors.SlateBlue,
     primaryInverse: colors.BlackPearl,
+    secondaryCompliment: colors.LuckyPoint,
     positive: '',
     negative: '',
+  },
+  fonts: {
+    primary: 'Merriweather, serif',
+    secondary: 'Source Sans Pro, sans-serif',
   },
 };
 

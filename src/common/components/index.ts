@@ -1,3 +1,3 @@
 export * from './menu-button';
-export * from './menu';
+export * from './sidebar';
 export * from './animated-background';

@@ -9,13 +9,16 @@ const GeorgeLogo = styled.svg((props) => ({
   width: '100px',
 }));
 
-const AuthorBy = styled.span({
+const AuthorBy = styled.span((props) => ({
+  fontFamily: props.theme.fonts.primary,
   color: '#7e7e7e',
   marginRight: '4px',
-});
+  fontSize: '12px',
+}));
 
 const AuthorName = styled.span((props) => ({
-  fontSize: '15px',
+  fontFamily: props.theme.fonts.secondary,
+  fontSize: '16px',
   color: props.theme.colors.primaryInverse,
 }));
 
