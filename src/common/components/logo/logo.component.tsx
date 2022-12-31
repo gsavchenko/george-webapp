@@ -1,5 +1,5 @@
 import React from 'react';
-import { VerticalLayout } from '../verticalLayout';
+import { VerticalLayout } from '../../../components/layouts/verticalLayout';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 

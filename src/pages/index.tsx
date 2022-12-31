@@ -1,11 +1,12 @@
 import React from 'react';
 import { Home } from '../features/home';
-import { Shell } from '../features/shell';
-import { ThemeProvider } from '@emotion/react';
+import { Global, ThemeProvider } from '@emotion/react';
 import { theme } from '../styles/theme';
 
 const SiteIndex = (): JSX.Element => (
   <ThemeProvider theme={theme}>
+    {/* Removes a default 8px margin that break 100vh */}
+    <Global styles={{ body: { margin: '0px' } }} />
     <Home />
   </ThemeProvider>
 );
