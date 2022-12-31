@@ -3,37 +3,35 @@ import { VerticalLayout } from '../verticalLayout';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-const GeorgeLogo = styled.svg((props) => ({
-  fill: props.theme.colors.secondary,
+interface LogoProps {
+  color?: string;
+}
+
+const GeorgeLogo = styled.svg<LogoProps>(({ theme, color }) => ({
+  fill: color ?? theme.colors.secondary,
   height: '100px',
   width: '100px',
 }));
 
-const AuthorBy = styled.span((props) => ({
-  fontFamily: props.theme.fonts.primary,
-  color: '#7e7e7e',
+const AuthorBy = styled.span<LogoProps>(({ theme, color }) => ({
+  fontFamily: theme.fonts.primary,
+  color: color ?? '#7e7e7e',
   marginRight: '4px',
   fontSize: '12px',
 }));
 
-const AuthorName = styled.span((props) => ({
-  fontFamily: props.theme.fonts.secondary,
+const AuthorName = styled.span<LogoProps>(({ theme, color }) => ({
+  fontFamily: theme.fonts.secondary,
   fontSize: '16px',
-  color: props.theme.colors.primaryInverse,
+  color: color ?? theme.colors.primaryInverse,
 }));
 
-interface LogoProps {
-  theme?: string;
-}
-
-export const Logo = ({ theme }: LogoProps): JSX.Element => {
-  // TODO: add this back
-  // const { theme } = props;
-
+export const Logo = ({ color }: LogoProps): JSX.Element => {
   return (
     <VerticalLayout>
       <VerticalLayout.Top>
         <GeorgeLogo
+          color={color}
           enableBackground="new 0 0 1081.6 1081.8"
           viewBox="0 0 1081.6 1081.8"
         >
@@ -48,10 +46,10 @@ export const Logo = ({ theme }: LogoProps): JSX.Element => {
             font-size: 16px;
           `}
         >
-          <AuthorBy>
+          <AuthorBy color={color}>
             <i>by</i>
           </AuthorBy>
-          <AuthorName>
+          <AuthorName color={color}>
             <b>George Savchenko</b>
           </AuthorName>
         </label>

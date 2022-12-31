@@ -61,6 +61,8 @@ const MenuContent = styled.div(({ theme }) => ({
 
 const MenuFooter = styled.div({
   paddingTop: '30px',
+  display: 'flex',
+  justifyContent: 'center',
 });
 
 const LinkTo = styled.a({
@@ -69,6 +71,10 @@ const LinkTo = styled.a({
   color: 'white',
   display: 'block',
   transition: '0.3s',
+
+  ':hover': {
+    opacity: '0.5',
+  },
 });
 
 export const Sidebar = ({ isOpen }: SidebarProps): JSX.Element => {
@@ -77,7 +83,7 @@ export const Sidebar = ({ isOpen }: SidebarProps): JSX.Element => {
       <Sliver isOpen={isOpen} />
       <SubSliver isOpen={isOpen} />
       <MenuContainer>
-        <Logo theme="light"></Logo>
+        <Logo color="white" />
         <MenuContent>
           <LinkTo href="docs/george.savchenko.resume.pdf">RESUME</LinkTo>
           <MenuFooter>

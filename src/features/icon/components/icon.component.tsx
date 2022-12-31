@@ -7,7 +7,7 @@ export interface IconProps {
   color?: string;
 }
 
-const Icon = (props: IconProps): JSX.Element => {
+export const Icon = (props: IconProps): JSX.Element => {
   const { icon, size = 36, color = 'white' } = props;
 
   return React.createElement(icon, {
@@ -15,5 +15,3 @@ const Icon = (props: IconProps): JSX.Element => {
     color: color,
   });
 };
-
-export default Icon;

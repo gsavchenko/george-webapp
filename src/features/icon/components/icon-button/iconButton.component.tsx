@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconType } from 'react-icons';
 import styled from '@emotion/styled';
-import Icon from '../icon.component';
+import { Icon } from '../icon.component';
 
 const CircleButton = styled.button((props) => ({
   display: 'flex',

@@ -1,22 +1,31 @@
-import { IconProps } from '../icon.component';
+import { Icon, IconProps } from '../icon.component';
 import React from 'react';
-
-import './icon-link.css';
+import styled from '@emotion/styled';
 
 interface IconLinkProps extends IconProps {
   href: string;
 }
 
-const IconLink = (props: IconLinkProps) => {
-  const { icon, href } = props;
-  const Icon = icon;
+const IconLinkContainer = styled.div({
+  textDecoration: 'none',
+  fontSize: '25px',
+  color: 'white',
+  display: 'block',
+  transition: '0.3s',
 
+  ':hover': {
+    opacity: '0.5',
+  },
+});
+
+const IconLink = (props: IconLinkProps): JSX.Element => {
+  const { icon, color, href } = props;
   return (
-    <div className="icon-container">
+    <IconLinkContainer>
       <a href={href}>
-        <Icon className="icon" size={36}></Icon>
+        <Icon icon={icon} size={36} color={color}></Icon>
       </a>
-    </div>
+    </IconLinkContainer>
   );
 };
 
