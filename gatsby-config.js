@@ -1,14 +1,14 @@
-const path = require("path");
+const path = require('path');
 // Get paths of Gatsby's required rules, which as of writing is located at:
 // https://github.com/gatsbyjs/gatsby/tree/fbfe3f63dec23d279a27b54b4057dd611dce74bb/packages/
 // gatsby/src/utils/eslint-rules
 const gatsbyRequiredRules = path.join(
   process.cwd(),
-  "node_modules",
-  "gatsby",
-  "dist",
-  "utils",
-  "eslint-rules"
+  'node_modules',
+  'gatsby',
+  'dist',
+  'utils',
+  'eslint-rules'
 );
 
 module.exports = {
@@ -53,30 +53,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
-      options: { feeds: [] }
+      options: { feeds: [] },
     },
     {
-      resolve:`gatsby-plugin-manifest`,
-      options: { icons: [] }
+      resolve: `gatsby-plugin-manifest`,
+      options: { icons: [] },
     },
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-react-redux`,
-      options: {
-        // [required] - path to module you created in step 1
-        pathToCreateStoreModule: './src/app/store',
-        // [optional] - options passed to `serialize-javascript`
-        // info: https://github.com/yahoo/serialize-javascript#options
-        // will be merged with these defaults:
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false,
-        },
-      },
-    },
     `gatsby-plugin-ramda`,
-    `gatsby-plugin-emotion`
+    `gatsby-plugin-emotion`,
   ],
-}
-    
+};

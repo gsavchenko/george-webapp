@@ -13,9 +13,8 @@ const ButtonContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   top: '20px',
   left: '20px',
   position: 'fixed',
-  transition: '0.5s',
+  transition: '0.44s',
   zIndex: '10',
-  transitionTimingFunction: 'ease-out',
   paddingLeft: isOpen ? '300px' : '0',
 
   '@media screen and (max-width: 370px)': {
@@ -25,7 +24,7 @@ const ButtonContainer = styled.div<SidebarProps>(({ isOpen }) => ({
 
 const HeaderContainer = styled.div<SidebarProps>({
   padding: '20px',
-  transition: '0.45s',
+  // transition: '0.45s',
 });
 
 export const Header = (): JSX.Element => {
