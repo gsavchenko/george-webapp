@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
+// import get from 'lodash/get';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { FaAward } from 'react-icons/fa';
 import {
   VerticalTimeline,
@@ -11,19 +10,19 @@ import 'react-vertical-timeline-component/style.min.css';
 
 class Journey extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description',
-    );
+    // const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    // const siteDescription = get(
+    //   this,
+    //   'props.data.site.siteMetadata.description',
+    // );
 
     return (
       <div>
-        <Helmet
+        {/* <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`Journey | ${siteTitle}`}
-        />
+        /> */}
 
         <h2>Journey</h2>
 

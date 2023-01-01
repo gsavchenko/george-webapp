@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 
 import Bio from '../../common/components/Bio'
 import { Frontmatter, MarkdownRemark, PageContext } from './models'
@@ -42,16 +42,16 @@ const BlogPostTemplate = (props: BlogPostTemplateProps) => {
 
   const post = data.markdownRemark
   const siteTitle = get(props, 'data.site.siteMetadata.title')
-  const siteDescription = post.excerpt
+  // const siteDescription = post.excerpt
   // const { previous, next } = this.props.pageContext;
 
   return (
     <div title={siteTitle}>
-      <Helmet
+      {/* <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: siteDescription }]}
         title={`${post.frontmatter.title} | ${siteTitle}`}
-      />
+      /> */}
       <Link to="/blog">&larr; Blog</Link>
       <h1>{post.frontmatter.title}</h1>
       <br />

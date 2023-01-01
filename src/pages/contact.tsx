@@ -1,24 +1,23 @@
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
+// import get from 'lodash/get';
 import React from 'react';
-import Helmet from 'react-helmet';
 
 // import contactData from '../data/contact';
 
 class Contact extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description',
-    );
+    // const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    // const siteDescription = get(
+    //   this,
+    //   'props.data.site.siteMetadata.description',
+    // );
     return (
       <div>
-        <Helmet
+        {/* <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`Contact | ${siteTitle}`}
-        />
+        /> */}
         <h2>Contact</h2>
         <br />
       </div>

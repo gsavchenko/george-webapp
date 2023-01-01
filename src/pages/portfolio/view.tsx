@@ -1,6 +1,5 @@
 import { Link } from 'gatsby';
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 
 interface IViewState {
   title: string;
@@ -26,9 +25,6 @@ export class View extends Component<IViewProps, IViewState> {
     const { title, description, image, website } = passedData;
     return (
       <div>
-        <Helmet>
-          <title>{`${title} | Sai Krishna`}</title>
-        </Helmet>
         <Link to='/portfolio'>&larr; back</Link>
         <h2>{title}</h2>
         <img src={image} alt='profile'/>

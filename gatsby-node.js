@@ -11,24 +11,21 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(
         `
-          {
-            allMarkdownRemark(
-              sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    path
-                  }
+        {
+          allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1000) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  path
                 }
               }
             }
           }
+        }
         `
       ).then(result => {
         if (result.errors) {
@@ -73,3 +70,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// exports.onCreateNode = ({ node, getNode, actions }) => {
+//   const { createNodeField } = actions
+  
+//     if (node.internal.type === "MarkdownRemark" && node.fields.sourceName
+//      === "blog") {
+//       const slug = createFilePath({ node, getNode, basePath: "posts" })
+//       console.log('slug :', slug)
+//       createNodeField({
+//         node,
+//         name: "slug",
+//         value: slug
+//       })
+//     }
+    
+//   } 
