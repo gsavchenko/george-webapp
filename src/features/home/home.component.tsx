@@ -139,33 +139,32 @@ const Home: React.FC = () => {
             <Card>
               <Title>About Me</Title>
               <Description>
-                Hello. I am a <b>Canadian</b> frontend developer currently
+                Hello. I am a <b>Canadian</b> front-end developer currently
                 living in <b>Ottawa</b>! Canada's capital city. I love making
                 software that is fun to use.
               </Description>
               <Description>
-                I got my <u>Bachelors of Computing</u> at the University of{' '}
+                I got my <u>Bachelor of Computing</u> at the University of{' '}
                 <b>Guelph</b>. Afterwards, I moved to <b>Montreal</b> for my
                 first job with a Canadian company <b>Vish</b> creating inventory
-                management software for hair salons. There I helped them rebuild
-                their flagship product as part of an effort to support newer
-                verions of iOS and upgrade the web technologies the app was
-                using.
+                management software for hair salons. I helped them rebuild their
+                flagship product as part of an effort to support newer versions
+                of iOS and upgrade the web technologies the app was using.
               </Description>
               <Description>
-                While I was there I attempted to start a consulting company for
-                web development called GRAE. It didn't work out that well! At
-                least I tried. Maybe I'll start a company again one day...
+                While there, I attempted to start a consulting company for web
+                development called GRAE. It didn't work out that well! At least
+                I tried. Maybe I'll start a company again one day...
               </Description>
               <Description>
-                Next, I moved to <b>Ottawa</b> to work for a cyber security{' '}
+                Next, I moved to <b>Ottawa</b> to join a cyber security{' '}
                 <b>CybernetIQ</b> working on mapping networks to provide insight
                 into possible network threats for enterprises.
               </Description>
               <Description>
-                Now I'm proud to say I work for <b>Affinity</b> based in San
-                Francisco helping build out the next generation relationship
-                intelligence platform.
+                Now I'm proud to say I work for <b>Affinity</b> based in{' '}
+                <b>San Francisco</b> helping build out the next generation
+                relationship intelligence platform.
               </Description>
             </Card>
             <Card>
@@ -215,3 +214,8 @@ export const useQuery = (): string =>
       }
     }
   `);
+
+// I got my Bachelor of Computing at the University of Guelph. Afterwards, I moved to Montreal for my first job with a Canadian company Vish creating inventory management software for hair salons. I helped them rebuild their flagship product as part of an effort to support newer versions of iOS and upgrade the web technologies the app was using.
+// While there, I attempted to start a consulting company for web development called GRAE. It didn't work out that well! At least I tried. Maybe I'll start a company again one day...
+// Next, I moved to Ottawa to join a cyber security CybernetIQ working on mapping networks to provide insight into possible network threats for enterprises.
+// Now I'm proud to say I work for Affinity based in San Francisco helping build out the next generation relationship intelligence platform.
