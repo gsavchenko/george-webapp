@@ -18,8 +18,10 @@ const Header = ({ children }: SectionProps): JSX.Element => (
 
 const BodyContainer = styled.div({
   display: 'flex',
-  justifyContent: 'center',
   flex: '1',
+  margin: '0 350px',
+  marginTop: '100px',
+  flexDirection: 'column',
 });
 
 const Body = ({ children }: SectionProps): JSX.Element => (
