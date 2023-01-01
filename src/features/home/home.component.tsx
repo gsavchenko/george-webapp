@@ -51,15 +51,16 @@ const Description = styled.p(({ theme }) => ({
   color: theme.colors.primaryInverse,
 }));
 
-const TransparentBackground = styled.div(({ theme }) => ({
+const Card = styled.div(({ theme }) => ({
   display: 'flex',
   background: 'rgba(157, 225, 246, 0.8)',
   borderRadius: '5px',
   borderWidth: '1px',
   borderStyle: 'solid',
   borderColor: theme.colors.primaryInverse,
-  padding: '30px',
-  marginRight: '30px',
+  padding: '20px',
+  margin: '30px',
+  flexDirection: 'column',
 }));
 
 interface SidebarProps {
@@ -72,12 +73,36 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   height: '100%',
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+
+  '@media only screen and (min-width: 300px)': {
+    flexDirection: 'column-reverse',
+  },
+  '@media only screen and (min-width: 1520px)': {
+    flexDirection: 'row',
+  },
 }));
 
 const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
 }));
+
+const ProfilePicture = styled.img({
+  width: '300px',
+  height: '300px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  '@media only screen and (min-width: 300px)': {
+    width: '150px',
+    height: '150px',
+  },
+  '@media only screen and (min-width: 580px)': {
+    width: '300px',
+    height: '300px',
+  },
+});
 
 const Home: React.FC = () => {
   const enableOrbitControls = false;
@@ -111,38 +136,39 @@ const Home: React.FC = () => {
         </MainLayout.Header>
         <MainLayout.Body>
           <ContentContainer isOpen={isOpen}>
-            <TransparentBackground>
-              <div style={{ flexDirection: 'column' }}>
-                <Title>About Me</Title>
-                <Description>
-                  Hello. I am a Canadian frontend developer currently living in
-                  Ottawa! Canada's capital city. I got my Bachelors of Computing
-                  at the University of Guelph.
-                </Description>
-                <Description>
-                  Afterwards, I moved to Montreal for my first job with a
-                  Canadian company Vish creating inventory management software
-                  for hair salons. There I assisted them with their flagship
-                  product. I helped rebuild their application as part of an
-                  effort to support newer verions of iOS and upgrade the web
-                  technologies the app was using.
-                </Description>
-                <Description>
-                  While I was there I attempted to start a consulting company
-                  for web development called GRAE. It didn't work out that well.
-                </Description>
-                <Description>
-                  Next, I moved to Ottawa to work for a cyber security
-                  CybernetIQ working on mapping networks to provide insight into
-                  possible network threats for enterprises.
-                </Description>
-                <Description>
-                  Now I'm proud to say I work for Affinity helping build out the
-                  next generation of relationship intelligence platorms.
-                </Description>
-              </div>
-            </TransparentBackground>
-            <TransparentBackground>
+            <Card>
+              <Title>About Me</Title>
+              <Description>
+                Hello. I am a <b>Canadian</b> frontend developer currently
+                living in <b>Ottawa</b>! Canada's capital city. I love making
+                software that is fun to use. I got my{' '}
+                <u>Bachelors of Computing</u> at the University of <b>Guelph</b>
+                .
+              </Description>
+              <Description>
+                Afterwards, I moved to <b>Montreal</b> for my first job with a
+                Canadian company <b>Vish</b> creating inventory management
+                software for hair salons. There I assisted them rebuild their
+                flagship product as part of an effort to support newer verions
+                of iOS and upgrade the web technologies the app was using.
+              </Description>
+              <Description>
+                While I was there I attempted to start a consulting company for
+                web development called GRAE. It didn't work out that well! At
+                least I tried. Maybe I'll start a company again one day...
+              </Description>
+              <Description>
+                Next, I moved to <b>Ottawa</b> to work for a cyber security{' '}
+                <b>CybernetIQ</b> working on mapping networks to provide insight
+                into possible network threats for enterprises.
+              </Description>
+              <Description>
+                Now I'm proud to say I work for <b>Affinity</b> based in San
+                Francisco helping build out the next generation relationship
+                intelligence platform.
+              </Description>
+            </Card>
+            <Card>
               <div
                 style={{
                   display: 'flex',
@@ -150,19 +176,12 @@ const Home: React.FC = () => {
                   justifyContent: 'center',
                 }}
               >
-                <img
+                <ProfilePicture
                   src="images/profile_picture.jpg"
                   alt="Profie Picture"
-                  style={{
-                    width: '300px',
-                    height: '300px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
                 />
               </div>
-            </TransparentBackground>
+            </Card>
           </ContentContainer>
         </MainLayout.Body>
         <MainLayout.Footer>
