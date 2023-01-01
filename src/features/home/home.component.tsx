@@ -141,16 +141,16 @@ const Home: React.FC = () => {
               <Description>
                 Hello. I am a <b>Canadian</b> frontend developer currently
                 living in <b>Ottawa</b>! Canada's capital city. I love making
-                software that is fun to use. I got my{' '}
-                <u>Bachelors of Computing</u> at the University of <b>Guelph</b>
-                .
+                software that is fun to use.
               </Description>
               <Description>
-                Afterwards, I moved to <b>Montreal</b> for my first job with a
-                Canadian company <b>Vish</b> creating inventory management
-                software for hair salons. There I assisted them rebuild their
-                flagship product as part of an effort to support newer verions
-                of iOS and upgrade the web technologies the app was using.
+                I got my <u>Bachelors of Computing</u> at the University of{' '}
+                <b>Guelph</b>. Afterwards, I moved to <b>Montreal</b> for my
+                first job with a Canadian company <b>Vish</b> creating inventory
+                management software for hair salons. There I helped them rebuild
+                their flagship product as part of an effort to support newer
+                verions of iOS and upgrade the web technologies the app was
+                using.
               </Description>
               <Description>
                 While I was there I attempted to start a consulting company for
