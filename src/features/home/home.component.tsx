@@ -53,14 +53,12 @@ const Description = styled.p(({ theme }) => ({
 
 const Card = styled.div(({ theme }) => ({
   display: 'flex',
-  background: 'rgba(157, 225, 246, 0.8)',
+  background: 'rgba(255, 255, 255, 0.3)',
   borderRadius: '5px',
-  borderWidth: '1px',
-  borderStyle: 'solid',
-  borderColor: theme.colors.primaryInverse,
   padding: '20px',
   margin: '30px',
   flexDirection: 'column',
+  backdropFilter: 'blur(3px)',
 }));
 
 interface SidebarProps {
@@ -176,7 +174,7 @@ const Home: React.FC = () => {
                 }}
               >
                 <ProfilePicture
-                  src="images/profile_picture.jpg"
+                  src="images/profile_picture.png"
                   alt="Profie Picture"
                 />
               </div>
