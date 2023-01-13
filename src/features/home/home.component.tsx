@@ -144,18 +144,19 @@ const Home: React.FC = () => {
               <Description>
                 I got my <u>Bachelor of Computing</u> at the University of{' '}
                 <b>Guelph</b>. Afterwards, I moved to <b>Montreal</b> for my
-                first job with a Canadian company <b>Vish</b> creating inventory
+                first full-time job with <b>Vish</b> creating inventory
                 management software for hair salons. I helped them rebuild their
                 flagship product as part of an effort to support newer versions
                 of iOS and upgrade the web technologies the app was using.
               </Description>
               <Description>
                 While there, I attempted to start a consulting company for web
-                development called GRAE. It didn't work out that well! At least
-                I tried. Maybe I'll start a company again one day...
+                development called Grae Consulting Inc. It didn't work out that
+                well! At least I tried. Maybe I'll start a company again one
+                day...
               </Description>
               <Description>
-                Next, I moved to <b>Ottawa</b> to join a cyber security{' '}
+                Next, I moved to <b>Ottawa</b> to join a cyber security company{' '}
                 <b>CybernetIQ</b> working on mapping networks to provide insight
                 into possible network threats for enterprises.
               </Description>
