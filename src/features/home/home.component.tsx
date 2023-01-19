@@ -150,10 +150,10 @@ const Home: React.FC = () => {
                 of iOS and upgrade the web technologies the app was using.
               </Description>
               <Description>
-                While there, I attempted to start a consulting company for web
-                development called Grae Consulting Inc. It didn't work out that
-                well! At least I tried. Maybe I'll start a company again one
-                day...
+                While there, I attempted to start a consulting company for
+                general app development called Grae Consulting Inc. It didn't
+                work out that well! At least I tried. Maybe I'll start a company
+                again one day...
               </Description>
               <Description>
                 Next, I moved to <b>Ottawa</b> to join a cyber security company{' '}
