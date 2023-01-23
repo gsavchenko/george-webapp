@@ -62,6 +62,11 @@ interface SidebarProps {
   isOpen?: boolean;
 }
 
+const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+  transition: '0.40s',
+  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+}));
+
 const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -77,7 +82,7 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   },
 }));
 
-const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+const FooterContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
 }));
@@ -120,6 +125,7 @@ const Home: React.FC = () => {
           <ButtonContainer isOpen={isOpen}>
             <IconButton
               icon={isOpen ? icon.closed : icon.open}
+              hideOnScroll={!isOpen}
               onClick={handleToggle}
             />
           </ButtonContainer>
@@ -180,7 +186,9 @@ const Home: React.FC = () => {
           </ContentContainer>
         </MainLayout.Body>
         <MainLayout.Footer>
-          <p>Copyright © 2023 George Savchenko. All Rights Reserved.</p>
+          <FooterContainer isOpen={isOpen}>
+            <p>Copyright © 2023 George Savchenko. All Rights Reserved.</p>
+          </FooterContainer>
         </MainLayout.Footer>
       </MainLayout>
       <CanvasBackground>
