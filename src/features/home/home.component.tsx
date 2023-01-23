@@ -1,7 +1,5 @@
-import { AnimatedDescription } from './animated-description';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useCallback } from 'react';
-import { AnimatedBackground } from '../../common/components/animated-background';
 import { MainLayout } from '../../components/layouts/mainLayout/mainLayout.component';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -11,7 +9,6 @@ import { MdMenu, MdClose } from 'react-icons/md';
 import { useSidebar, Sidebar } from '../../common/components';
 import { Logo } from '../../common/components/logo';
 import { IconButton } from '../icon';
-import { css } from '@emotion/react';
 
 const CanvasBackground = styled.div((props) => ({
   width: '100%',
@@ -65,6 +62,11 @@ interface SidebarProps {
   isOpen?: boolean;
 }
 
+const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+  transition: '0.40s',
+  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+}));
+
 const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -80,7 +82,7 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   },
 }));
 
-const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+const FooterContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
 }));
@@ -123,6 +125,7 @@ const Home: React.FC = () => {
           <ButtonContainer isOpen={isOpen}>
             <IconButton
               icon={isOpen ? icon.closed : icon.open}
+              hideOnScroll={!isOpen}
               onClick={handleToggle}
             />
           </ButtonContainer>
@@ -183,7 +186,9 @@ const Home: React.FC = () => {
           </ContentContainer>
         </MainLayout.Body>
         <MainLayout.Footer>
-          <p>Copyright © 2023 George Savchenko. All Rights Reserved.</p>
+          <FooterContainer isOpen={isOpen}>
+            <p>Copyright © 2023 George Savchenko. All Rights Reserved.</p>
+          </FooterContainer>
         </MainLayout.Footer>
       </MainLayout>
       <CanvasBackground>
@@ -213,8 +218,3 @@ export const useQuery = (): string =>
       }
     }
   `);
-
-// I got my Bachelor of Computing at the University of Guelph. Afterwards, I moved to Montreal for my first job with a Canadian company Vish creating inventory management software for hair salons. I helped them rebuild their flagship product as part of an effort to support newer versions of iOS and upgrade the web technologies the app was using.
-// While there, I attempted to start a consulting company for web development called GRAE. It didn't work out that well! At least I tried. Maybe I'll start a company again one day...
-// Next, I moved to Ottawa to join a cyber security CybernetIQ working on mapping networks to provide insight into possible network threats for enterprises.
-// Now I'm proud to say I work for Affinity based in San Francisco helping build out the next generation relationship intelligence platform.

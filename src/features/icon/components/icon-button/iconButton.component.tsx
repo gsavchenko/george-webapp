@@ -1,35 +1,58 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { IconType } from 'react-icons';
 import styled from '@emotion/styled';
 import { Icon } from '../icon.component';
+import { useScrollDirection, ScrollDirection } from '../../../../utils';
 
-const CircleButton = styled.button((props) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '50px',
-  width: '50px',
-  backgroundColor: '#a9a9a9',
-  borderRadius: '50%',
-  border: 'none',
-  transition: 'all 0.25s ease-in-out',
+interface CircleButtonProps {
+  isScrollingDown: boolean;
+}
 
-  ':hover': {
+const CircleButton = styled.button<CircleButtonProps>(
+  ({ isScrollingDown, theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50px',
+    width: '50px',
+    backgroundColor: '#a9a9a9',
+    borderRadius: '50%',
+    border: 'none',
     transition: 'all 0.25s ease-in-out',
-    cursor: 'pointer',
-    backgroundColor: props.theme.colors.secondary,
-    boxShadow:
-      '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
-  },
-}));
+    transform: isScrollingDown ? 'scale(0)' : 'scale(1)',
+
+    ':hover': {
+      transition: 'all 0.25s ease-in-out',
+      cursor: 'pointer',
+      backgroundColor: theme.colors.secondary,
+      boxShadow:
+        '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
+    },
+  })
+);
 
 interface IconButtonProps {
   icon: IconType;
+  hideOnScroll?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const IconButton = ({ icon, onClick }: IconButtonProps): JSX.Element => (
-  <CircleButton onClick={onClick}>
-    <Icon icon={icon} />
-  </CircleButton>
-);
+export const IconButton = ({
+  icon,
+  hideOnScroll = false,
+  onClick,
+}: IconButtonProps): JSX.Element => {
+  const scrollDirection = useScrollDirection();
+
+  const isScrollingDown = useCallback(() => {
+    if (!hideOnScroll) return false;
+
+    return scrollDirection === ScrollDirection.DOWN;
+  }, [scrollDirection]);
+
+  return (
+    <CircleButton isScrollingDown={isScrollingDown()} onClick={onClick}>
+      <Icon icon={icon} />
+    </CircleButton>
+  );
+};

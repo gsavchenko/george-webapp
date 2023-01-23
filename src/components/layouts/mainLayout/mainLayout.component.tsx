@@ -24,7 +24,7 @@ const BodyContainer = styled.div({
   flexDirection: 'column',
 
   '@media only screen and (min-width: 300px)': {
-    margin: '0 50px',
+    margin: '0',
   },
   '@media only screen and (min-width: 800px)': {
     margin: '0 150px',
