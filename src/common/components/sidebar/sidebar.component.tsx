@@ -85,6 +85,7 @@ export const Sidebar = ({ isOpen }: SidebarProps): JSX.Element => {
         <Logo color="white" />
         <MenuContent>
           <LinkTo href="docs/george.savchenko.resume.pdf">RESUME</LinkTo>
+          <LinkTo href="/settings">SETTINGS</LinkTo>
           <MenuFooter>
             <IconLink
               href="https://github.com/gsavchenko"
