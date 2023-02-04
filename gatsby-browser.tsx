@@ -15,6 +15,6 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
   <>
     {/* Removes a default 8px margin that break 100vh */}
     <Global styles={{ body: { margin: '0px' } }} />
-    <ThemeProvider theme={theme}>{element}</ThemeProvider>;
+    <ThemeProvider theme={theme}>{element}</ThemeProvider>
   </>
 );
