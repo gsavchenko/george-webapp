@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { MdMenu, MdClose } from 'react-icons/md';
-import { useSidebar, Sidebar } from '../common/components';
-import { Logo } from '../common/components/logo';
-import { MainLayout } from '../components';
-import { Nodes } from '../components/three/nodes';
-import { IconButton } from '../features/icon';
+import { useSidebar, Sidebar } from '../modules/common';
+import { Logo } from '../modules/common';
+import { MainLayout } from '../modules/layouts';
+import { Nodes } from '../modules/three/nodes';
+import { IconButton } from '../modules/icon';
 
 const CanvasBackground = styled.div((props) => ({
   width: '100%',

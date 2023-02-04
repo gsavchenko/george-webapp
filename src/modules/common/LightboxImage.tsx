@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'react-responsive-modal';
+// import Modal from 'react-responsive-modal';
 
 interface ILightBoxImageProps {
   title: string;
@@ -14,18 +14,18 @@ export class LightboxImage extends Component<ILightBoxImageProps, {}> {
 
   openModal = () => {
     this.setState({ open: true });
-  }
+  };
 
   closeModal = () => {
     this.setState({ open: false });
-  }
+  };
 
   render() {
     // https://stackoverflow.com/questions/52249390/property-xyz-does-not-exist-on-type-readonly-children-reactnode-rea
     const { title, caption, src } = this.props;
     return (
       <div>
-        <Modal
+        {/* <Modal
           open={this.state.open}
           onClose={this.closeModal}
           center={true}
@@ -37,12 +37,8 @@ export class LightboxImage extends Component<ILightBoxImageProps, {}> {
             <br />
             {caption}
           </div>
-        </Modal>
-        <img
-          src={src}
-          alt={title}
-          onClick={this.openModal}
-        />
+        </Modal> */}
+        <img src={src} alt={title} onClick={this.openModal} />
       </div>
     );
   }

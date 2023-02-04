@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
 import React from 'react';
-import { MainLayout } from '../components';
+import { MainLayout } from '../modules/layouts';
 import { theme } from '../styles/theme';
 
 const Settings = (): JSX.Element => {

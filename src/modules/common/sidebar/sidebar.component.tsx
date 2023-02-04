@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from '../logo';
-import { IconLink } from '../../../features/icon';
+import { IconLink } from '../../../modules/icon';
 import { AiOutlineTwitter, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import styled from '@emotion/styled';
 
