@@ -33,6 +33,7 @@ specifiers:
   gatsby-transformer-sharp: ^5.0.0
   gh-pages: ^3.2.3
   graphql: ^16.0.0
+  jotai: ^2.0.0
   lodash: ^4.17.11
   prettier: ^2.3.2
   prismjs: ^1.29.0
@@ -80,6 +81,7 @@ dependencies:
   gatsby-transformer-remark: 6.3.2_gatsby@5.0.1
   gatsby-transformer-sharp: 5.0.0_7cgpvocxs27dba3glgswzfuozu
   graphql: 16.6.0
+  jotai: 2.0.0_react@18.2.0
   lodash: 4.17.21
   prismjs: 1.29.0
   ramda: 0.27.2
@@ -7947,6 +7949,18 @@ packages:
       '@sideway/address': 4.1.4
       '@sideway/formula': 3.0.0
       '@sideway/pinpoint': 2.0.0
+    dev: false
+
+  /jotai/2.0.0_react@18.2.0:
+    resolution: {integrity: sha512-04G0CRZQgp3xrFAezd6X14psZ2TRGekHeYMBcbDJ/BR8ZJQPS+j0YkMTxUxyG58HJnN2+adfj5sWQWoqgtp1XQ==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /js-sdsl/4.3.0:
