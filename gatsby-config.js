@@ -55,10 +55,6 @@ module.exports = {
       resolve: `gatsby-plugin-feed`,
       options: { feeds: [] },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: { icons: [] },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-ramda`,
     `gatsby-plugin-emotion`,
