@@ -28,10 +28,6 @@ jobs:
     - name: "🚀 static app"
       run: pnpm build
 
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.2.1
       with:
