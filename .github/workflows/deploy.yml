@@ -24,8 +24,7 @@ jobs:
           cd george-webapp
           pnpm i
           pnpm run build
-          sudo apt-get install -y rsync
-          rsync -azP /home/projects/temp/george-webapp/public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/home/projects/george-webapp/public
+          rsync -azP /home/projects/temp/george-webapp/public/ /home/projects/george-webapp/public
           cd ~
           rm -rf /home/projects/temp
           echo "Deployment Successful"
