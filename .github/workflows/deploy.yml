@@ -41,5 +41,5 @@ jobs:
 
           script: |
             sudo apt-get install -y rsync
-            rsync -azP ./public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/home/projects/george-webapp/public
+            rsync -azP ./public/ /home/projects/george-webapp/public
             echo "Deployment Successful"
