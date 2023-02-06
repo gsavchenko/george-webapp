@@ -16,7 +16,7 @@ jobs:
         key: ${{secrets.MR_KRABS_KEY}}
         username: ${{secrets.MR_KRABS_USER}}
         
-        script:
+        script: |
           cd ~/projects/
           mkdir temp
           cd temp
