@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy App
-      uses: appleboy/ssh-action@0.1.2      
+      uses: appleboy/ssh-action@v0.1.7      
       with:
         host: ${{secrets.MR_KRABS_HOST}}
         key: ${{secrets.MR_KRABS_KEY}}
