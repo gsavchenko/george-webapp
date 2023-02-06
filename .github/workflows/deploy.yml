@@ -1,0 +1,29 @@
+name: Build & Deploy
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy App
+      uses: appleboy/ssh-action@v0.1.7      
+      with:
+        host: ${{secrets.MR_KRABS_HOST}}
+        key: ${{secrets.MR_KRABS_KEY}}
+        username: ${{secrets.MR_KRABS_USER}}
+        
+        script: |
+          cd ~/projects/
+          mkdir temp
+          cd temp
+          git clone git@github.com:gsavchenko/george-webapp.git
+          cd george-webapp
+          yarn install
+          yarn run build
+          sudo apt-get install -y rsync
+          rsync -azP ./public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:~/projects/george-webapp/public
+          echo "Deployment Successful"

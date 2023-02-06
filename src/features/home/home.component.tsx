@@ -166,7 +166,7 @@ const Home: React.FC = () => {
               <Description>
                 Now I'm proud to say I work for <b>Affinity</b> based in{' '}
                 <b>San Francisco</b> helping build out the next generation
-                relationship intelligence platform.
+                relationship intelligence platform!
               </Description>
             </Card>
             <Card>
