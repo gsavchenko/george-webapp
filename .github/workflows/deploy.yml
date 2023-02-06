@@ -17,7 +17,7 @@ jobs:
         username: ${{secrets.MR_KRABS_USER}}
         
         script: |
-          cd /projects/
+          cd /home/projects/
           mkdir temp
           cd temp
           git clone git@github.com:gsavchenko/george-webapp.git
@@ -25,7 +25,7 @@ jobs:
           pnpm i
           pnpm run build
           sudo apt-get install -y rsync
-          rsync -azP /home/temp/george-webapp/public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/projects/george-webapp/public
+          rsync -azP /home/projects/temp/george-webapp/public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/home/projects/george-webapp/public
           cd ~
-          rm -rf /projects/temp
+          rm -rf /home/projects/temp
           echo "Deployment Successful"
