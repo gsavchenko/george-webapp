@@ -6,25 +6,36 @@ on:
     branches: [master]
 
 jobs:
-  deploy:
+  build:
+    name: Build app
     runs-on: ubuntu-latest
-    steps:
-      - name: Deploy App
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{secrets.MR_KRABS_HOST}}
-          key: ${{secrets.MR_KRABS_KEY}}
-          username: ${{secrets.MR_KRABS_USER}}
+      steps:
+        - name: "☁️ checkout repository"
+          uses: actions/checkout@v2
 
-          script: |
-            cd /home/projects/
-            mkdir temp
-            cd temp
-            git clone git@github.com:gsavchenko/george-webapp.git
-            cd george-webapp
-            pnpm i
-            pnpm build
-            rsync -azP /home/projects/temp/george-webapp/public/ /home/projects/george-webapp/public
-            cd ~
-            rm -rf /home/projects/temp
-            echo "Deployment Successful"
+        - name: "🔧 setup node"
+          uses: actions/setup-node@v2.1.5
+          with:
+            node-version: 18
+
+        - name: "🔧 install pnpm"
+          uses: pnpm/action-setup@v2
+
+        - name: "🚀 static app"
+          run: pnpm run build
+
+    deploy:
+      runs-on: ubuntu-latest
+      needs: [build]
+      steps:
+        - name: Deploy App
+          uses: appleboy/ssh-action@v0.1.7
+          with:
+            host: ${{secrets.MR_KRABS_HOST}}
+            key: ${{secrets.MR_KRABS_KEY}}
+            username: ${{secrets.MR_KRABS_USER}}
+
+            script: |
+              sudo apt-get install -y rsync
+              rsync -azP ./public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/home/projects/george-webapp/public
+              echo "Deployment Successful"
