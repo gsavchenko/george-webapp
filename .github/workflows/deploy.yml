@@ -17,13 +17,15 @@ jobs:
         username: ${{secrets.MR_KRABS_USER}}
         
         script: |
-          cd ~/projects/
+          cd /projects/
           mkdir temp
           cd temp
           git clone git@github.com:gsavchenko/george-webapp.git
           cd george-webapp
-          yarn install
-          yarn run build
+          pnpm i
+          pnpm run build
           sudo apt-get install -y rsync
-          rsync -azP ./public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:~/projects/george-webapp/public
+          rsync -azP /home/temp/george-webapp/public/ ${{secrets.MR_KRABS_USER}}@${{secrets.MR_KRABS_HOST}}:/projects/george-webapp/public
+          cd ~
+          rm -rf /projects/temp
           echo "Deployment Successful"
