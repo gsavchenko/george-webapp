@@ -9,22 +9,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy App
-      uses: appleboy/ssh-action@v0.1.7      
-      with:
-        host: ${{secrets.MR_KRABS_HOST}}
-        key: ${{secrets.MR_KRABS_KEY}}
-        username: ${{secrets.MR_KRABS_USER}}
-        
-        script: |
-          cd /home/projects/
-          mkdir temp
-          cd temp
-          git clone git@github.com:gsavchenko/george-webapp.git
-          cd george-webapp
-          pnpm i
-          pnpm run build
-          rsync -azP /home/projects/temp/george-webapp/public/ /home/projects/george-webapp/public
-          cd ~
-          rm -rf /home/projects/temp
-          echo "Deployment Successful"
+      - name: Deploy App
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{secrets.MR_KRABS_HOST}}
+          key: ${{secrets.MR_KRABS_KEY}}
+          username: ${{secrets.MR_KRABS_USER}}
+
+          script: |
+            cd /home/projects/
+            mkdir temp
+            cd temp
+            git clone git@github.com:gsavchenko/george-webapp.git
+            cd george-webapp
+            pnpm i
+            pnpm build
+            rsync -azP /home/projects/temp/george-webapp/public/ /home/projects/george-webapp/public
+            cd ~
+            rm -rf /home/projects/temp
+            echo "Deployment Successful"
