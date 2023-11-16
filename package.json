@@ -47,7 +47,7 @@
     "three": "^0.146.0",
     "typeface-merriweather": "^1.1.13",
     "typeface-source-sans-pro": "^1.1.5",
-    "webpack": "^5.51.1"
+    "webpack": "^5.76.0"
   },
   "devDependencies": {
     "@gatsbyjs/reach-router": "^2.0.1",
