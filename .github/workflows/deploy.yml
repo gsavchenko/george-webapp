@@ -9,31 +9,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: "☁️ checkout repository"
-      uses: actions/checkout@v2
+      - name: '☁️ checkout repository'
+        uses: actions/checkout@v2
 
-    - name: "🔧 setup node"
-      uses: actions/setup-node@v2.1.5
-      with:
-        node-version: 18
+      - name: '🔧 setup node'
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 18
 
-    - name: "🔧 install pnpm"
-      uses: pnpm/action-setup@v2
-      with:
-        version: 6.0.2
-    
-    - name: "🚀 install deps"
-      run: pnpm i
-    
-    - name: "🚀 static app"
-      run: pnpm build
+      - name: '🔧 install pnpm'
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.7
 
-    - name: rsync deployments
-      uses: burnett01/rsync-deployments@5.2.1
-      with:
-        switches: -azP
-        path: public/
-        remote_path: /home/projects/george-webapp/public
-        remote_host: ${{secrets.MR_KRABS_HOST}}
-        remote_user: ${{secrets.MR_KRABS_USER}}
-        remote_key: ${{secrets.MR_KRABS_KEY}}
+      - name: '🚀 install deps'
+        run: pnpm i
+
+      - name: '🚀 static app'
+        run: pnpm build
+
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2.1
+        with:
+          switches: -azP
+          path: public/
+          remote_path: /home/projects/george-webapp/public
+          remote_host: ${{secrets.MR_KRABS_HOST}}
+          remote_user: ${{secrets.MR_KRABS_USER}}
+          remote_key: ${{secrets.MR_KRABS_KEY}}
