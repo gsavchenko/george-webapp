@@ -1,47 +1,47 @@
-import { graphql, Link } from 'gatsby'
-import get from 'lodash/get'
-import React from 'react'
+import { graphql, Link } from 'gatsby';
+import get from 'lodash/get';
+import React from 'react';
 // import Helmet from 'react-helmet'
 
-import Bio from '../../common/components/Bio'
-import { Frontmatter, MarkdownRemark, PageContext } from './models'
+import Bio from '../../components/common/Bio';
+import { Frontmatter, MarkdownRemark, PageContext } from './models';
 
-import './blog-post.css'
+import './blog-post.css';
 
 interface BlogPostTemplateProps {
-  location: string
-  pageContext: PageContext
+  location: string;
+  pageContext: PageContext;
   data: {
-    markdownRemark: MarkdownRemark
-  }
+    markdownRemark: MarkdownRemark;
+  };
 }
 
 const BlogPostTemplate = (props: BlogPostTemplateProps) => {
-  const { pageContext, data } = props
+  const { pageContext, data } = props;
 
   const getPostPath = (pageContext: PageContext): PageContext => {
     const newPageContext: PageContext = {
       previous: getFrontmatter(pageContext.previous),
       next: getFrontmatter(pageContext.next),
-    }
+    };
 
-    return newPageContext
-  }
+    return newPageContext;
+  };
 
   const getFrontmatter = (markdownRemark: MarkdownRemark): MarkdownRemark => {
     const frontmatter = markdownRemark
       ? markdownRemark.frontmatter
-      : new Frontmatter()
+      : new Frontmatter();
     const updatedMarkdownRemark = {
       ...markdownRemark,
       frontmatter,
-    }
+    };
 
-    return updatedMarkdownRemark
-  }
+    return updatedMarkdownRemark;
+  };
 
-  const post = data.markdownRemark
-  const siteTitle = get(props, 'data.site.siteMetadata.title')
+  const post = data.markdownRemark;
+  const siteTitle = get(props, 'data.site.siteMetadata.title');
   // const siteDescription = post.excerpt
   // const { previous, next } = this.props.pageContext;
 
@@ -75,10 +75,10 @@ const BlogPostTemplate = (props: BlogPostTemplateProps) => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -102,4 +102,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
