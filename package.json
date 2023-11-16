@@ -43,7 +43,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.2.0",
     "react-vertical-timeline-component": "^3.3.3",
-    "sharp": "^0.31.2",
+    "sharp": "^0.32.6",
     "three": "^0.146.0",
     "typeface-merriweather": "^1.1.13",
     "typeface-source-sans-pro": "^1.1.5",
