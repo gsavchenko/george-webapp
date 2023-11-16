@@ -6,8 +6,8 @@ import { OrbitControls } from '@react-three/drei';
 import { Nodes } from '../../components/three/nodes';
 import styled from '@emotion/styled';
 import { MdMenu, MdClose } from 'react-icons/md';
-import { useSidebar, Sidebar } from '../../common/components';
-import { Logo } from '../../common/components/logo';
+import { useSidebar, Sidebar } from '../../components/common';
+import { Logo } from '../../components/common';
 import { IconButton } from '../icon';
 
 const CanvasBackground = styled.div((props) => ({
