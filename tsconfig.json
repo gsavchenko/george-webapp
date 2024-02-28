@@ -4,7 +4,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -13,7 +14,6 @@
     "experimentalDecorators": true,
     "target": "esnext",
     "typeRoots": ["node_modules/@types"],
-    "types": ["@emotion/react/types/css-prop"],
     "lib": ["es2017", "dom"]
   }
 }
