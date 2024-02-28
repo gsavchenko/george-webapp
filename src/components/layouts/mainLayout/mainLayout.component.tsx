@@ -1,19 +1,12 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface SectionProps {
   children: ReactNode;
 }
 
 const Header = ({ children }: SectionProps): JSX.Element => (
-  <div
-    css={css`
-      padding: 20px;
-    `}
-  >
-    {children}
-  </div>
+  <div>{children}</div>
 );
 
 const BodyContainer = styled.div({

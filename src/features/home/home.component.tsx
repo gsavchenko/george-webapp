@@ -65,6 +65,7 @@ interface SidebarProps {
 const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+  paddingTop: '20px',
 }));
 
 const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
@@ -77,7 +78,7 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   '@media only screen and (min-width: 300px)': {
     flexDirection: 'column-reverse',
   },
-  '@media only screen and (min-width: 1490px)': {
+  '@media only screen and (min-width: 1440px)': {
     flexDirection: 'row-reverse',
   },
   '@media only screen and (min-width: 1520px)': {
