@@ -77,6 +77,9 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   '@media only screen and (min-width: 300px)': {
     flexDirection: 'column-reverse',
   },
+  '@media only screen and (min-width: 1490px)': {
+    flexDirection: 'row-reverse',
+  },
   '@media only screen and (min-width: 1520px)': {
     flexDirection: 'row',
   },
