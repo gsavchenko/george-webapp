@@ -65,6 +65,7 @@ interface SidebarProps {
 const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   transition: '0.40s',
   transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+  paddingTop: '20px',
 }));
 
 const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
@@ -76,6 +77,9 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
 
   '@media only screen and (min-width: 300px)': {
     flexDirection: 'column-reverse',
+  },
+  '@media only screen and (min-width: 1440px)': {
+    flexDirection: 'row-reverse',
   },
   '@media only screen and (min-width: 1520px)': {
     flexDirection: 'row',
@@ -106,6 +110,7 @@ const ProfilePicture = styled.img({
 
 const Home: React.FC = () => {
   const enableOrbitControls = false;
+  const fullYear = new Date().getFullYear();
 
   const icon = {
     open: MdMenu,
@@ -187,7 +192,7 @@ const Home: React.FC = () => {
         </MainLayout.Body>
         <MainLayout.Footer>
           <FooterContainer isOpen={isOpen}>
-            <p>Copyright © 2023 George Savchenko. All Rights Reserved.</p>
+            <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
           </FooterContainer>
         </MainLayout.Footer>
       </MainLayout>
