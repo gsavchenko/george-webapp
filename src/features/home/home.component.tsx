@@ -7,7 +7,7 @@ import { Nodes } from '../../components/three/nodes';
 import styled from '@emotion/styled';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { useSidebar, Sidebar } from '../../components/common';
-import { Logo } from '../../components/common';
+import { Logo, Link } from '../../components/common';
 import { IconButton } from '../icon';
 
 const CanvasBackground = styled.div((props) => ({
@@ -145,17 +145,25 @@ const Home: React.FC = () => {
             <Card>
               <Title>About Me</Title>
               <Description>
-                Hello. I am a <b>Canadian</b> front-end developer currently
-                living in <b>Ottawa</b>! Canada's capital city. I love making
-                software that is fun to use.
+                Hello. I am a Canadian front-end developer currently living in
+                Ottawa! Canada's capital city. I love making software that is
+                fun to use.
               </Description>
               <Description>
-                I got my <u>Bachelor of Computing</u> at the University of{' '}
-                <b>Guelph</b>. Afterwards, I moved to <b>Montreal</b> for my
-                first full-time job with <b>Vish</b> creating inventory
-                management software for hair salons. I helped them rebuild their
-                flagship product as part of an effort to support newer versions
-                of iOS and upgrade the web technologies the app was using.
+                I got my{' '}
+                <Link href="https://www.uoguelph.ca/programs/bachelor-of-computing/">
+                  Bachelor of Computing
+                </Link>{' '}
+                at the{' '}
+                <Link href="https://www.uoguelph.ca/">
+                  University of Guelph
+                </Link>
+                . Afterwards, I moved to Montréal for my first full-time job
+                with <Link href="https://getvish.com/">Vish</Link> creating
+                inventory management software for hair salons. I helped them
+                rebuild their flagship product as part of an effort to support
+                newer versions of iOS and upgrade the web technologies the app
+                was using.
               </Description>
               <Description>
                 While there, I attempted to start a consulting company for
@@ -164,13 +172,16 @@ const Home: React.FC = () => {
                 again one day...
               </Description>
               <Description>
-                Next, I moved to <b>Ottawa</b> to join a cyber security company{' '}
-                <b>CybernetIQ</b> working on mapping networks to provide insight
-                into possible network threats for enterprises.
+                Next, I moved to Ottawa to join a cyber security company{' '}
+                CybernetIQ working on mapping networks to provide insight into
+                possible network threats for enterprises.
               </Description>
               <Description>
-                Now I'm proud to say I work for <b>Affinity</b> based in{' '}
-                <b>San Francisco</b> helping build out the next generation
+                Now I'm proud to say I work for{' '}
+                <Link href="https://www.affinity.co/product/extensions">
+                  Affinity
+                </Link>{' '}
+                based in San Francisco helping build out the next generation
                 relationship intelligence platform!
               </Description>
             </Card>
