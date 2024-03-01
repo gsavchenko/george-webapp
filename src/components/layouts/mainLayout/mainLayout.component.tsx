@@ -25,6 +25,9 @@ const BodyContainer = styled.div({
   '@media only screen and (min-width: 1520px)': {
     margin: '0 350px',
   },
+  '@media only screen and (min-width: 1930px)': {
+    margin: '0 600px',
+  },
 });
 
 const Body = ({ children }: SectionProps): JSX.Element => (

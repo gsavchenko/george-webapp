@@ -7,7 +7,7 @@ import { Nodes } from '../../components/three/nodes';
 import styled from '@emotion/styled';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { useSidebar, Sidebar } from '../../components/common';
-import { Logo } from '../../components/common';
+import { Logo, Link } from '../../components/common';
 import { IconButton } from '../icon';
 
 const CanvasBackground = styled.div((props) => ({
@@ -58,22 +58,14 @@ const Card = styled.div(({ theme }) => ({
   backdropFilter: 'blur(3px)',
 }));
 
-interface SidebarProps {
-  isOpen?: boolean;
-}
-
-const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+const HeaderContainer = styled.div({
   paddingTop: '20px',
-}));
+});
 
-const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+const ContentContainer = styled.div({
   display: 'flex',
   alignItems: 'center',
   height: '100%',
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
 
   '@media only screen and (min-width: 300px)': {
     flexDirection: 'column-reverse',
@@ -84,12 +76,7 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   '@media only screen and (min-width: 1520px)': {
     flexDirection: 'row',
   },
-}));
-
-const FooterContainer = styled.div<SidebarProps>(({ isOpen }) => ({
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
-}));
+});
 
 const ProfilePicture = styled.img({
   width: '300px',
@@ -134,44 +121,59 @@ const Home: React.FC = () => {
               onClick={handleToggle}
             />
           </ButtonContainer>
-          <HeaderContainer isOpen={isOpen}>
+          <HeaderContainer>
             <Logo />
           </HeaderContainer>
-
           <Sidebar isOpen={isOpen} />
         </MainLayout.Header>
         <MainLayout.Body>
-          <ContentContainer isOpen={isOpen}>
+          <ContentContainer>
             <Card>
               <Title>About Me</Title>
               <Description>
-                Hello. I am a <b>Canadian</b> front-end developer currently
-                living in <b>Ottawa</b>! Canada's capital city. I love making
-                software that is fun to use.
+                Hello! I'm a Canadian software developer with a keen interest in
+                building intuitive, user-friendly software. My journey through
+                the tech industry has taken me from obtaining a{' '}
+                <Link href="https://www.uoguelph.ca/programs/bachelor-of-computing/">
+                  Bachelor of Computing
+                </Link>{' '}
+                at the{' '}
+                <Link href="https://www.uoguelph.ca/">
+                  University of Guelph
+                </Link>{' '}
+                to exploring various roles in cities like Montréal, where I
+                ventured into starting my own business. Though the outcome was
+                unexpected, the experience enriched my understanding of
+                resilience and innovation.
               </Description>
               <Description>
-                I got my <u>Bachelor of Computing</u> at the University of{' '}
-                <b>Guelph</b>. Afterwards, I moved to <b>Montreal</b> for my
-                first full-time job with <b>Vish</b> creating inventory
-                management software for hair salons. I helped them rebuild their
-                flagship product as part of an effort to support newer versions
-                of iOS and upgrade the web technologies the app was using.
+                In Ottawa, amid the pandemic's challenges, I started the Ottawa
+                JavaScript Meetup. It was my way of contributing to a sense of
+                community when we all needed it most. While I can't claim sole
+                responsibility for revitalizing the Ottawa tech meetup scene,
+                I'm proud to have added to the collective efforts that kept our
+                community connected and resilient during those times.
               </Description>
               <Description>
-                While there, I attempted to start a consulting company for
-                general app development called Grae Consulting Inc. It didn't
-                work out that well! At least I tried. Maybe I'll start a company
-                again one day...
+                My professional path has seen me tackle a broad spectrum of
+                challenges, from improving inventory management systems at{' '}
+                <Link href="https://getvish.com/product-features/">Vish</Link>{' '}
+                to contributing to cybersecurity solutions. Currently, I'm with{' '}
+                <Link href="https://www.affinity.co/product/extensions">
+                  Affinity
+                </Link>
+                , working on exciting projects that shape the future of
+                relationship intelligence.
               </Description>
               <Description>
-                Next, I moved to <b>Ottawa</b> to join a cyber security company{' '}
-                <b>CybernetIQ</b> working on mapping networks to provide insight
-                into possible network threats for enterprises.
-              </Description>
-              <Description>
-                Now I'm proud to say I work for <b>Affinity</b> based in{' '}
-                <b>San Francisco</b> helping build out the next generation
-                relationship intelligence platform!
+                Outside of work, I'm an avid skier and draw inspiration from art
+                and music, which fuels my creative approach to technology. I
+                believe in the joy of discovery and innovation in every project,
+                aiming to make software development not just productive but also
+                enjoyable. I'm eager to connect with others who share a vision
+                for technology that enhances our lives. Let's embark on a
+                journey of software development filled with learning,
+                innovation, and fun.
               </Description>
             </Card>
             <Card>
@@ -191,9 +193,7 @@ const Home: React.FC = () => {
           </ContentContainer>
         </MainLayout.Body>
         <MainLayout.Footer>
-          <FooterContainer isOpen={isOpen}>
-            <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
-          </FooterContainer>
+          <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
         </MainLayout.Footer>
       </MainLayout>
       <CanvasBackground>

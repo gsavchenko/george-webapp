@@ -28,11 +28,11 @@
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
-    "requireConfigFile": false,
     "ecmaFeatures": {
       "jsx": true
     },
     "project": ["./tsconfig.json"],
+    "requireConfigFile": false,
     "babelOptions": {
       "presets": ["@babel/preset-typescript"]
     }

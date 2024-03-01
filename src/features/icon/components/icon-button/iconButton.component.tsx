@@ -15,9 +15,9 @@ const CircleButton = styled.button<CircleButtonProps>(
     alignItems: 'center',
     height: '50px',
     width: '50px',
-    backgroundColor: '#a9a9a9',
+    backgroundColor: 'rgba(255, 255, 255, 0)',
     borderRadius: '50%',
-    border: 'none',
+    border: '2px solid white', // Adjusted line: thick black outline
     transition: 'all 0.25s ease-in-out',
     transform: isScrollingDown ? 'scale(0)' : 'scale(1)',
 
