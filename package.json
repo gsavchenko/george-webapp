@@ -19,10 +19,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@types/three": "^0.146.0",
-    "classnames": "^2.3.2",
-    "core-js": "^3",
     "eslint": "^8.33.0",
-    "fp-ts": "^2.11.1",
     "gatsby": "^5.0.1",
     "gatsby-plugin-emotion": "^8.0.0",
     "gatsby-plugin-feed": "^5.0.0",
@@ -84,12 +81,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "start": "npm run develop",
     "build": "NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
