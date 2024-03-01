@@ -33,7 +33,7 @@
     "gatsby-remark-smartypants": "^6.0.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
-    "graphql": "^16.0.0",
+    "graphql": "^16.8.1",
     "lodash": "^4.17.11",
     "prismjs": "^1.29.0",
     "ramda": "^0.27.1",
