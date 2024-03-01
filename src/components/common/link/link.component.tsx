@@ -6,16 +6,14 @@ type LinkProps = Pick<ComponentProps<typeof RadixLink>, 'href'> & {
   children: ReactNode;
 };
 
-const HighlightedLink = styled(RadixLink)(
-  ({ theme }) => `
-  color: ${theme.colors.secondary};
+const HighlightedLink = styled(RadixLink)(({ theme }) => ({
+  color: theme.colors.secondary,
 
-  &:hover {
-    color: ${theme.colors.accent};
-    opacity: 0.6;
-  }
-`
-);
+  ':hover': {
+    color: theme.colors.accent,
+    opacity: 0.6,
+  },
+}));
 
 export const Link = ({ href, children }: LinkProps): JSX.Element => {
   return <HighlightedLink href={href}>{children}</HighlightedLink>;
