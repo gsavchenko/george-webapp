@@ -131,44 +131,49 @@ const Home: React.FC = () => {
             <Card>
               <Title>About Me</Title>
               <Description>
-                Hello. I am a Canadian front-end developer currently living in
-                Ottawa! Canada's capital city. I love making software that is
-                fun to use.
-              </Description>
-              <Description>
-                I got my{' '}
+                Hello! I'm a Canadian software developer with a keen interest in
+                building intuitive, user-friendly software. My journey through
+                the tech industry has taken me from obtaining a{' '}
                 <Link href="https://www.uoguelph.ca/programs/bachelor-of-computing/">
                   Bachelor of Computing
                 </Link>{' '}
                 at the{' '}
                 <Link href="https://www.uoguelph.ca/">
                   University of Guelph
-                </Link>
-                . Afterwards, I moved to Montréal for my first full-time job
-                with <Link href="https://getvish.com/">Vish</Link> creating
-                inventory management software for hair salons. I helped them
-                rebuild their flagship product as part of an effort to support
-                newer versions of iOS and upgrade the web technologies the app
-                was using.
+                </Link>{' '}
+                to exploring various roles in cities like Montréal, where I
+                ventured into starting my own business. Though the outcome was
+                unexpected, the experience enriched my understanding of
+                resilience and innovation.
               </Description>
               <Description>
-                While there, I attempted to start a consulting company for
-                general app development called Grae Consulting Inc. It didn't
-                work out that well! At least I tried. Maybe I'll start a company
-                again one day...
+                In Ottawa, amid the pandemic's challenges, I started the Ottawa
+                JavaScript Meetup. It was my way of contributing to a sense of
+                community when we all needed it most. While I can't claim sole
+                responsibility for revitalizing the Ottawa tech meetup scene,
+                I'm proud to have added to the collective efforts that kept our
+                community connected and resilient during those times.
               </Description>
               <Description>
-                Next, I moved to Ottawa to join a cyber security company{' '}
-                CybernetIQ working on mapping networks to provide insight into
-                possible network threats for enterprises.
-              </Description>
-              <Description>
-                Now I'm proud to say I work for{' '}
+                My professional path has seen me tackle a broad spectrum of
+                challenges, from improving inventory management systems at{' '}
+                <Link href="https://getvish.com/product-features/">Vish</Link>{' '}
+                to contributing to cybersecurity solutions. Currently, I'm with{' '}
                 <Link href="https://www.affinity.co/product/extensions">
                   Affinity
-                </Link>{' '}
-                based in San Francisco helping build out the next generation
-                relationship intelligence platform!
+                </Link>
+                , working on exciting projects that shape the future of
+                relationship intelligence.
+              </Description>
+              <Description>
+                Outside of work, I'm an avid skier and draw inspiration from art
+                and music, which fuels my creative approach to technology. I
+                believe in the joy of discovery and innovation in every project,
+                aiming to make software development not just productive but also
+                enjoyable. I'm eager to connect with others who share a vision
+                for technology that enhances our lives. Let's embark on a
+                journey of software development filled with learning,
+                innovation, and fun.
               </Description>
             </Card>
             <Card>
