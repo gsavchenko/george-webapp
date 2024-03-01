@@ -58,22 +58,14 @@ const Card = styled.div(({ theme }) => ({
   backdropFilter: 'blur(3px)',
 }));
 
-interface SidebarProps {
-  isOpen?: boolean;
-}
-
-const HeaderContainer = styled.div<SidebarProps>(({ isOpen }) => ({
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
+const HeaderContainer = styled.div({
   paddingTop: '20px',
-}));
+});
 
-const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
+const ContentContainer = styled.div({
   display: 'flex',
   alignItems: 'center',
   height: '100%',
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
 
   '@media only screen and (min-width: 300px)': {
     flexDirection: 'column-reverse',
@@ -84,12 +76,7 @@ const ContentContainer = styled.div<SidebarProps>(({ isOpen }) => ({
   '@media only screen and (min-width: 1520px)': {
     flexDirection: 'row',
   },
-}));
-
-const FooterContainer = styled.div<SidebarProps>(({ isOpen }) => ({
-  transition: '0.40s',
-  transform: `translate(${isOpen ? '300px' : '0'}, 0)`,
-}));
+});
 
 const ProfilePicture = styled.img({
   width: '300px',
@@ -134,14 +121,13 @@ const Home: React.FC = () => {
               onClick={handleToggle}
             />
           </ButtonContainer>
-          <HeaderContainer isOpen={isOpen}>
+          <HeaderContainer>
             <Logo />
           </HeaderContainer>
-
           <Sidebar isOpen={isOpen} />
         </MainLayout.Header>
         <MainLayout.Body>
-          <ContentContainer isOpen={isOpen}>
+          <ContentContainer>
             <Card>
               <Title>About Me</Title>
               <Description>
@@ -202,9 +188,7 @@ const Home: React.FC = () => {
           </ContentContainer>
         </MainLayout.Body>
         <MainLayout.Footer>
-          <FooterContainer isOpen={isOpen}>
-            <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
-          </FooterContainer>
+          <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
         </MainLayout.Footer>
       </MainLayout>
       <CanvasBackground>
