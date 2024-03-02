@@ -147,12 +147,13 @@ const Home: React.FC = () => {
                 resilience and innovation.
               </Description>
               <Description>
-                In Ottawa, amid the pandemic's challenges, I started the Ottawa
-                JavaScript Meetup. It was my way of contributing to a sense of
-                community when we all needed it most. While I can't claim sole
-                responsibility for revitalizing the Ottawa tech meetup scene,
-                I'm proud to have added to the collective efforts that kept our
-                community connected and resilient during those times.
+                In Ottawa, amid the pandemic's challenges, I started the
+                "Ottaweb", a JavaScript Meetup. It was my way of contributing to
+                a sense of community when we all needed it most. While I can't
+                claim sole responsibility for revitalizing the Ottawa tech
+                meetup scene, I'm proud to have added to the collective efforts
+                that kept our community connected and resilient during those
+                times.
               </Description>
               <Description>
                 My professional path has seen me tackle a broad spectrum of
@@ -171,9 +172,11 @@ const Home: React.FC = () => {
                 believe in the joy of discovery and innovation in every project,
                 aiming to make software development not just productive but also
                 enjoyable. I'm eager to connect with others who share a vision
-                for technology that enhances our lives. Let's embark on a
-                journey of software development filled with learning,
-                innovation, and fun.
+                for technology that enhances our lives.
+              </Description>
+              <Description>
+                Let's embark on a journey of software development filled with
+                learning, innovation, and fun.
               </Description>
             </Card>
             <Card>
