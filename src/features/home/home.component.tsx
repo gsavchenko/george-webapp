@@ -147,13 +147,12 @@ const Home: React.FC = () => {
                 resilience and innovation.
               </Description>
               <Description>
-                In Ottawa, amid the pandemic's challenges, I started the
-                "Ottaweb", a JavaScript Meetup. It was my way of contributing to
-                a sense of community when we all needed it most. While I can't
-                claim sole responsibility for revitalizing the Ottawa tech
-                meetup scene, I'm proud to have added to the collective efforts
-                that kept our community connected and resilient during those
-                times.
+                In Ottawa, amid the pandemic's challenges, I started "Ottaweb",
+                a JavaScript Meetup. It was my way of contributing to a sense of
+                community when we all needed it most. While I can't claim sole
+                responsibility for revitalizing the Ottawa tech meetup scene,
+                I'm proud to have added to the collective efforts that kept our
+                community connected and resilient during those times.
               </Description>
               <Description>
                 My professional path has seen me tackle a broad spectrum of
