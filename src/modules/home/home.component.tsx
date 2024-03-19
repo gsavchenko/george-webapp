@@ -1,42 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import React, { useCallback } from 'react';
-import { MainLayout } from '../../components/layouts/mainLayout/mainLayout.component';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { Nodes } from '../../components/three/nodes';
+import React from 'react';
+import { MainLayout } from '../layouts';
 import styled from '@emotion/styled';
-import { MdMenu, MdClose } from 'react-icons/md';
-import { useSidebar, Sidebar } from '../../components/common';
-import { Logo, Link } from '../../components/common';
-import { IconButton } from '../icon';
-
-const CanvasBackground = styled.div((props) => ({
-  width: '100%',
-  height: '100%',
-  display: 'block',
-  position: 'fixed',
-  top: '0',
-  left: '0',
-  backgroundColor: props.theme.colors.primary,
-  zIndex: '-1',
-}));
-
-interface SidebarProps {
-  isOpen?: boolean;
-}
-
-const ButtonContainer = styled.div<SidebarProps>(({ isOpen }) => ({
-  top: '20px',
-  left: '20px',
-  position: 'fixed',
-  transition: '0.44s',
-  zIndex: '10',
-  paddingLeft: isOpen ? '300px' : '0',
-
-  '@media screen and (max-width: 370px)': {
-    paddingLeft: '0px',
-  },
-}));
+import { useSidebar } from '../common';
+import { Logo, Link } from '../common';
 
 const Title = styled.h1(({ theme }) => ({
   fontFamily: theme.fonts.primary,
@@ -97,34 +64,15 @@ const ProfilePicture = styled.img({
 
 const Home: React.FC = () => {
   const enableOrbitControls = false;
-  const fullYear = new Date().getFullYear();
-
-  const icon = {
-    open: MdMenu,
-    closed: MdClose,
-  };
-
-  const { isOpen, openSidebar, closeSidebar } = useSidebar();
-
-  const handleToggle = useCallback(() => {
-    isOpen ? closeSidebar() : openSidebar();
-  }, [isOpen]);
+  const { isOpen } = useSidebar();
 
   return (
     <>
       <MainLayout>
         <MainLayout.Header>
-          <ButtonContainer isOpen={isOpen}>
-            <IconButton
-              icon={isOpen ? icon.closed : icon.open}
-              hideOnScroll={!isOpen}
-              onClick={handleToggle}
-            />
-          </ButtonContainer>
           <HeaderContainer>
             <Logo />
           </HeaderContainer>
-          <Sidebar isOpen={isOpen} />
         </MainLayout.Header>
         <MainLayout.Body>
           <ContentContainer>
@@ -194,20 +142,8 @@ const Home: React.FC = () => {
             </Card>
           </ContentContainer>
         </MainLayout.Body>
-        <MainLayout.Footer>
-          <p>Copyright © {fullYear} George Savchenko. All Rights Reserved.</p>
-        </MainLayout.Footer>
+        <MainLayout.Footer />
       </MainLayout>
-      <CanvasBackground>
-        <Canvas>
-          <>
-            {enableOrbitControls && <OrbitControls makeDefault />}
-            <ambientLight />
-            <pointLight position={[10, 10, 10]} />
-            <Nodes />
-          </>
-        </Canvas>
-      </CanvasBackground>
     </>
   );
 };

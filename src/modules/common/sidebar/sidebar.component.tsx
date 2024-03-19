@@ -1,6 +1,5 @@
-import React from 'react';
 import { Logo } from '../logo';
-import { IconLink } from '../../../features/icon';
+import { IconLink } from '../icon';
 import { AiOutlineTwitter, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import styled from '@emotion/styled';
 
@@ -64,7 +63,7 @@ const MenuFooter = styled.div({
   justifyContent: 'center',
 });
 
-const LinkTo = styled.a({
+const StyledLink = styled.a({
   textDecoration: 'none',
   fontSize: '25px',
   color: 'white',
@@ -84,7 +83,11 @@ export const Sidebar = ({ isOpen }: SidebarProps): JSX.Element => {
       <MenuContainer>
         <Logo color="white" />
         <MenuContent>
-          <LinkTo href="docs/george.savchenko.resume.pdf">RESUME</LinkTo>
+          <StyledLink href="/">HOME</StyledLink>
+          <StyledLink href="/services">SERVICES</StyledLink>
+          <StyledLink href="/docs/george.savchenko.resume.pdf">
+            RESUME
+          </StyledLink>
           <MenuFooter>
             <IconLink
               href="https://github.com/gsavchenko"

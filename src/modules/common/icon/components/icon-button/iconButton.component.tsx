@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { IconType } from 'react-icons';
 import styled from '@emotion/styled';
 import { Icon } from '../icon.component';
-import { useScrollDirection, ScrollDirection } from '../../../../utils';
+import { useScrollDirection, ScrollDirection } from '../../../../../utils';
 
 interface CircleButtonProps {
   isScrollingDown: boolean;
