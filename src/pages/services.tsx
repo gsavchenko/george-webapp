@@ -7,6 +7,8 @@ const SectionContainer = styled.div({
   textAlign: 'center',
 });
 
+export const Head = (): JSX.Element => <title>Services</title>;
+
 const Services = (): JSX.Element => {
   return (
     <MainLayout>
