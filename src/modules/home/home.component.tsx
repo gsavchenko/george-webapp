@@ -1,14 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useCallback } from 'react';
-import { MainLayout } from '../../components/layouts/mainLayout/mainLayout.component';
+import { MainLayout } from '../layouts';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { Nodes } from '../../components/three/nodes';
+import { Nodes } from '../three';
 import styled from '@emotion/styled';
 import { MdMenu, MdClose } from 'react-icons/md';
-import { useSidebar, Sidebar } from '../../components/common';
-import { Logo, Link } from '../../components/common';
-import { IconButton } from '../icon';
+import { useSidebar, Sidebar } from '../common';
+import { Logo, Link } from '../common';
+import { IconButton } from '../common/icon';
 
 const CanvasBackground = styled.div((props) => ({
   width: '100%',

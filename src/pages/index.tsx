@@ -1,4 +1,4 @@
-import { Home } from '../features/home';
+import { Home } from '../modules/home';
 import { Global, ThemeProvider } from '@emotion/react';
 import { theme } from '../styles/theme';
 import '@radix-ui/themes/styles.css';
