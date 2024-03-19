@@ -8,7 +8,7 @@ export function onInitialClientRender() {
   require('typeface-source-sans-pro');
 }
 
-export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
+export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
   return (
