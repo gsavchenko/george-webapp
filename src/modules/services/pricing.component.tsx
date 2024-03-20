@@ -15,12 +15,11 @@ const SubscriptionContainer = styled.div({
 
 const Plan = styled.div(() => ({
   padding: '20px',
-  border: '1px solid #ccc',
+  border: '1px solid #d4af37',
   borderRadius: '8px',
   flexBasis: '30%',
   maxWidth: '400px',
-  background: 'rgba(255, 255, 255, 0.3)',
-  backdropfilter: 'blur(3px)',
+  background: 'white',
 }));
 
 const PlanTitle = styled.h3`
@@ -36,8 +35,7 @@ const Price = styled.div`
 
 const FeatureList = styled.ul`
   text-align: left;
-  list-style: none;
-  padding: 0;
+  padding: 0 14px;
   margin: 10px 0;
 `;
 
@@ -58,48 +56,50 @@ export const Pricing = () => {
           <PlanTitle>Initial Website Build</PlanTitle>
           <Highlight>The foundational step where every client starts</Highlight>
           <FeatureList>
-            <Feature>Variable Flat Fee</Feature>
-            <Feature>Design of Website</Feature>
-            <Feature>Development of Website</Feature>
-            <Feature>Launch of Website</Feature>
+            <Feature>One-time variable flat fee</Feature>
+            <Feature>Custom design and development</Feature>
+            <Feature>Mobile-responsive</Feature>
+            <Feature>Launch and handover</Feature>
           </FeatureList>
         </Plan>
       </SubscriptionContainer>
 
       <SubscriptionContainer>
         <Plan>
-          <PlanTitle>Starter Growth Plan</PlanTitle>
-          <Highlight>Perfect for small businesses and startups</Highlight>
-          <Price>$150/month</Price>
+          <PlanTitle>Essentials Plan</PlanTitle>
+          <Highlight>
+            Ideal for startups and small businesses needing essential
+            maintenance and minor monthly updates
+          </Highlight>
+          <Price>$99/month</Price>
           <FeatureList>
-            <Feature>Monthly Website Health Checks</Feature>
-            <Feature>Content Updates (up to 5 pages/month)</Feature>
-            <Feature>Email Support</Feature>
+            <Feature>Content uploading for up to 5 pages</Feature>
+            <Feature>Email support with 48-hour response time</Feature>
+            <Feature>Web hosting management included</Feature>
             <Feature>Cancel Anytime</Feature>
           </FeatureList>
         </Plan>
 
         <Plan>
-          <PlanTitle>Dynamic Growth Plan</PlanTitle>
+          <PlanTitle>Essentials Plus Plan</PlanTitle>
           <Highlight>
-            Ideal for businesses aiming for active growth and engagement
+            Geared towards businesses aiming for steady growth and increased
+            engagement
           </Highlight>
-          <Price>$275/month</Price>
+          <Price>$199/month</Price>
           <FeatureList>
-            <Feature>Includes all Starter Growth Features</Feature>
-            <Feature>Bi-weekly Content Updates</Feature>
-            <Feature>Priority Email Support</Feature>
-            <Feature>
-              New Features Support (up to 2 new features/quarter)
-            </Feature>
-            <Feature>Cancel Anytime</Feature>
+            <Feature>All Essentials Plan features</Feature>
+            <Feature>Bi-weekly Content Updates for up to 10 pages</Feature>
+            <Feature>Priority email support with 24-hour response time</Feature>
+            <Feature>Up to 2 new features or integrations per quarter</Feature>
           </FeatureList>
         </Plan>
 
         <Plan>
           <PlanTitle>Custom Growth Solution</PlanTitle>
           <Highlight>
-            For businesses seeking a bespoke growth strategy
+            For businesses looking for a partner to build and execute a
+            long-term digital strategy, not just a website
           </Highlight>
           <FeatureList>
             <Feature>Fully Tailored Web Services</Feature>
