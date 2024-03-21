@@ -3,21 +3,8 @@ import { IconButton } from '../../common/icon';
 import { ReactNode, useCallback } from 'react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { Sidebar, useSidebar } from '../../common';
-import React from 'react';
-import { OrbitControls } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
-import { Nodes } from '../../three';
-
-const CanvasBackground = styled.div((props) => ({
-  width: '100%',
-  height: '100%',
-  display: 'block',
-  position: 'fixed',
-  top: '0',
-  left: '0',
-  backgroundColor: props.theme.colors.primary,
-  zIndex: '-1',
-}));
+import React, { CSSProperties } from 'react';
+import { SerializedStyles } from '@emotion/react';
 
 interface SectionProps {
   children?: ReactNode;
@@ -89,19 +76,7 @@ const BodyContainer = styled.div({
 });
 
 const Body = ({ children }: SectionProps): JSX.Element => (
-  <>
-    <BodyContainer>{children}</BodyContainer>
-    <CanvasBackground>
-      <Canvas>
-        <>
-          {false && <OrbitControls makeDefault />}
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <Nodes />
-        </>
-      </Canvas>
-    </CanvasBackground>
-  </>
+  <BodyContainer>{children}</BodyContainer>
 );
 
 const FooterContainer = styled.div(({ theme }) => ({
@@ -131,11 +106,11 @@ const MainLayoutContainer = styled.div({
   overflow: 'hidden',
 });
 
-interface VerticalLayoutProps {
+interface MainLayoutProps {
   children: ReactNode;
 }
 
-export const MainLayout = ({ children }: VerticalLayoutProps): JSX.Element => (
+export const MainLayout = ({ children }: MainLayoutProps): JSX.Element => (
   <MainLayoutContainer>{children}</MainLayoutContainer>
 );
 

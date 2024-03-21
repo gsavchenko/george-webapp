@@ -7,28 +7,34 @@ const SectionContainer = styled.div({
   textAlign: 'center',
 });
 
+const SevicesContainer = styled.div(({ theme }) => ({
+  backgroundColor: theme.colors.primary,
+}));
+
 export const Head = (): JSX.Element => <title>Services</title>;
 
 const Services = (): JSX.Element => {
   return (
-    <MainLayout>
-      <MainLayout.Header>
-        <SectionContainer>
-          <h1>Services</h1>
-        </SectionContainer>
-      </MainLayout.Header>
-      <MainLayout.Body>
-        <Pricing />
-        <SectionContainer>
-          <p>
-            Discover the Unmatched Personalization of a Custom-Built Website —
-            No Cookie-Cutter Templates. Just Unique, Tailored Design and
-            Flexible Growth Plans That Fit Your Business Like a Glove.
-          </p>
-        </SectionContainer>
-      </MainLayout.Body>
-      <MainLayout.Footer></MainLayout.Footer>
-    </MainLayout>
+    <SevicesContainer>
+      <MainLayout>
+        <MainLayout.Header>
+          <SectionContainer>
+            <h1>Services</h1>
+          </SectionContainer>
+        </MainLayout.Header>
+        <MainLayout.Body>
+          <Pricing />
+          <SectionContainer>
+            <p>
+              Discover the Unmatched Personalization of a Custom-Built Website —
+              No Cookie-Cutter Templates. Just Unique, Tailored Design and
+              Flexible Growth Plans That Fit Your Business Like a Glove.
+            </p>
+          </SectionContainer>
+        </MainLayout.Body>
+        <MainLayout.Footer />
+      </MainLayout>
+    </SevicesContainer>
   );
 };
 

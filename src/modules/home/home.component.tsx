@@ -2,8 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { MainLayout } from '../layouts';
 import styled from '@emotion/styled';
-import { useSidebar } from '../common';
 import { Logo, Link } from '../common';
+import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Nodes } from '../three';
 
 const Title = styled.h1(({ theme }) => ({
   fontFamily: theme.fonts.primary,
@@ -62,9 +64,19 @@ const ProfilePicture = styled.img({
   },
 });
 
+const CanvasBackground = styled.div((props) => ({
+  width: '100%',
+  height: '100%',
+  display: 'block',
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  backgroundColor: props.theme.colors.primary,
+  zIndex: '-1',
+}));
+
 const Home: React.FC = () => {
   const enableOrbitControls = false;
-  const { isOpen } = useSidebar();
 
   return (
     <>
@@ -144,6 +156,16 @@ const Home: React.FC = () => {
         </MainLayout.Body>
         <MainLayout.Footer />
       </MainLayout>
+      <CanvasBackground>
+        <Canvas>
+          <>
+            {enableOrbitControls && <OrbitControls makeDefault />}
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Nodes />
+          </>
+        </Canvas>
+      </CanvasBackground>
     </>
   );
 };

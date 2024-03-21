@@ -19,18 +19,12 @@ const Plan = styled.div(() => ({
   borderRadius: '8px',
   flexBasis: '30%',
   maxWidth: '400px',
-  background: 'white',
+  background: 'rgba(255, 255, 255, 0.3)',
 }));
 
 const PlanTitle = styled.h3`
   font-size: 20px;
   color: #333;
-`;
-
-const Price = styled.div`
-  font-size: 20px;
-  font-weight: bold;
-  margin: 15px 0;
 `;
 
 const FeatureList = styled.ul`
@@ -71,8 +65,10 @@ export const Pricing = () => {
             Ideal for startups and small businesses needing essential
             maintenance and minor monthly updates
           </Highlight>
-          <Price>$99/month</Price>
           <FeatureList>
+            <Feature>
+              Affordable monthly subscription, after the initial build
+            </Feature>
             <Feature>Content uploading for up to 5 pages</Feature>
             <Feature>Email support with 48-hour response time</Feature>
             <Feature>Web hosting management included</Feature>
@@ -86,8 +82,10 @@ export const Pricing = () => {
             Geared towards businesses aiming for steady growth and increased
             engagement
           </Highlight>
-          <Price>$199/month</Price>
           <FeatureList>
+            <Feature>
+              Premium monthly subscription, after the initial build
+            </Feature>
             <Feature>All Essentials Plan features</Feature>
             <Feature>Bi-weekly Content Updates for up to 10 pages</Feature>
             <Feature>Priority email support with 24-hour response time</Feature>
